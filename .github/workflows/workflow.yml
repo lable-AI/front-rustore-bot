@@ -22,7 +22,7 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker run -p 3000:3000 hackaton-front:test
+          docker run -p 3000:3000 raghtnes/hackaton-front:test
 
 
       # - name: Cleanup
