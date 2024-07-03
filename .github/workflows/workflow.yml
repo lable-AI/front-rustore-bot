@@ -12,6 +12,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Execute build script
+        run: |
+          chmod +x ./build.sh
+          ./build.sh
+
       - name: Pull Docker image
         run: docker pull raghtnes/hackaton-front:test
 
@@ -23,7 +28,3 @@ jobs:
       - name: Run Docker container
         run: |
           docker run -p 3000:3000 raghtnes/hackaton-front:test
-
-
-      # - name: Cleanup
-      #   run: docker system prune -f
