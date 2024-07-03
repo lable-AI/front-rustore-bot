@@ -17,6 +17,9 @@ jobs:
           chmod +x ./build.sh
           ./build.sh
 
+      - name: Sleep for 5 seconds
+        run: sleep 5
+
       - name: Pull Docker image
         run: docker pull raghtnes/hackaton-front:test
 
@@ -27,4 +30,4 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker run -p 3000:3000 raghtnes/hackaton-front:test
+          docker run -d -p 3000:3000 raghtnes/hackaton-front:test
