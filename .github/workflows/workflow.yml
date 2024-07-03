@@ -1,5 +1,8 @@
 name: Docker Container Restart
 
+on:
+  push:
+    branches: [ "main" ]
 
 jobs:
   restart_container:
