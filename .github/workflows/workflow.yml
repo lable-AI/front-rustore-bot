@@ -1,0 +1,25 @@
+name: Docker Container Restart
+
+
+jobs:
+  restart_container:
+    runs-on: self-hosted  # Используем self-hosted runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Pull Docker image
+        run: docker pull raghtnes/hackaton-front:test
+
+      - name: Stop existing container (if running)
+        run: |
+          docker stop hackaton-front:test || true
+          docker rm hackaton-front:test || true
+
+      - name: Run Docker container
+        run: |
+          docker run -d --name hackaton-front:test raghtnes/hackaton-front:test
+
+      # - name: Cleanup
+      #   run: docker system prune -f
