@@ -132,7 +132,7 @@ const Page = () => {
             }}
           >
             <Typography variant="h2" component="h1">
-              Label AI
+              TEST
             </Typography>
           </div>
         </div>
