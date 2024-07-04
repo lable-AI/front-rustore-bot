@@ -4,30 +4,36 @@ on:
   push:
     branches: [ "main" ]
 
+env:
+ BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
+
 jobs:
   restart_container:
     runs-on: self-hosted  # Используем self-hosted runner
 
     steps:
+
+      - name: Branch name
+        run: echo running on branch ${BRANCH_NAME}
+
       - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Execute build script
         run: |
           chmod +x ./build.sh
-          ./build.sh 
+          ./build.sh  ${BRANCH_NAME}
 
       - name: Sleep for 5 seconds
         run: sleep 5
 
       - name: Pull Docker image
-        run: docker pull raghtnes/hackaton-front:test
+        run: docker pull raghtnes/hackaton-front:main
 
       - name: Stop existing container (if running)
         run: |
-          docker stop hackaton-front:test || true
-          docker rm hackaton-front:test || true
+          docker stop hackaton-front:main || true
 
       - name: Run Docker container
         run: |
-          docker run -d -p 3000:3000 raghtnes/hackaton-front:test
+          docker run -d -p 3000:3000 raghtnes/hackaton-front:main
