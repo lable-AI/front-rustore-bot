@@ -7,10 +7,13 @@ import { ThemeProvider } from '@mui/material/styles';
 import { createTheme } from 'src/theme';
 import { createEmotionCache } from 'src/utils/create-emotion-cache';
 import 'simplebar-react/dist/simplebar.min.css';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const clientSideEmotionCache = createEmotionCache();
 
 const SplashScreen = () => null;
+
+const queryClient = new QueryClient()
 
 const App = (props) => {
 	const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
@@ -19,7 +22,8 @@ const App = (props) => {
 
 	const theme = createTheme();
 
-	return (<CacheProvider value={emotionCache}>
+	return (
+	  <CacheProvider value={emotionCache}>
 		<Head>
 			<title>
 				Label AI
@@ -32,10 +36,13 @@ const App = (props) => {
 		<LocalizationProvider dateAdapter={AdapterDateFns}>
 			<ThemeProvider theme={theme}>
 				<CssBaseline/>
-				{getLayout(<Component {...pageProps} />)}
+				<QueryClientProvider client={queryClient}>
+					{getLayout(<Component {...pageProps} />)}
+				</QueryClientProvider>
 			</ThemeProvider>
 		</LocalizationProvider>
-	</CacheProvider>);
+	</CacheProvider>
+	);
 };
 
 export default App;
