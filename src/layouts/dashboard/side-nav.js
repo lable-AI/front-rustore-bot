@@ -18,6 +18,9 @@ import { Logo } from 'src/components/logo';
 import { Scrollbar } from 'src/components/scrollbar';
 import { items } from './config';
 import { SideNavItem } from './side-nav-item';
+import { grey } from '@mui/material/colors';
+
+const SIDE_TOP_HEIGHT = 64;
 
 export const SideNav = (props) => {
   const { open, onClose } = props;
@@ -32,7 +35,7 @@ export const SideNav = (props) => {
           height: '100%'
         },
         '& .simplebar-scrollbar:before': {
-          background: 'neutral.400'
+          background: '#e7e8e9'
         }
       }}
     >
@@ -40,21 +43,20 @@ export const SideNav = (props) => {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          height: '100%'
+          height: '100%',
+          background: grey["200"],
         }}
       >
-        <Box sx={{ p: 2 }}>
-          <Box
-            
-          >
+        <Box sx={{ p: 2, height: SIDE_TOP_HEIGHT }}>
+          <Box>
             {/* <Logo /> */}
-            <Typography variant="h6" component="h6" >
-              <Link href="/about-us" style={{textDecoration: "none", color: "#ffff"}} >Label AI</Link>
+            <Typography variant="h6" component="h6" align={'center'}>
+              <Link href="/about-us" style={{textDecoration: "none", color: grey[900]}} >Label AI</Link>
             </Typography>
           </Box>
           
         </Box>
-        <Divider sx={{ borderColor: 'neutral.700' }} />
+        <Divider />
         <Box
           component="nav"
           sx={{

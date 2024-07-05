@@ -70,7 +70,7 @@ export const createTypography = () => {
       fontFamily: '\'Plus Jakarta Sans\', sans-serif',
       fontWeight: 700,
       fontSize: '1.125rem',
-      lineHeight: 1.2
+      lineHeight: 1.2,
     }
   };
 };

@@ -56,32 +56,13 @@ console.log('Hello, world!');
 `;
 
 const Page = () => (
-    <>
-      <Head>
-        <title>
-          readme | label AI team
-        </title>
-      </Head>
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          py: 8,
-          backgroundColor: '#f5f5f5',
-        }}
-      >
-        <Container sx={{
-          border: '1px solid #e0e0e0',
-          borderRadius: '8px',
-          padding: '16px',
-          backgroundColor: '#ffffff',
-        }}>
-            <MarkdownRenderer>
-                {markdown}
-            </MarkdownRenderer>
-        </Container>
-      </Box>
-    </>
+  <Container sx={{
+    padding: '16px',
+  }}>
+    <MarkdownRenderer>
+      {markdown}
+    </MarkdownRenderer>
+  </Container>
   );
 
 Page.getLayout = (page) => (

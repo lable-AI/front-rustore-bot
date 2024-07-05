@@ -32,10 +32,10 @@ export const SideNavItem = (props) => {
           textAlign: 'left',
           width: '100%',
           ...(active && {
-            backgroundColor: 'rgba(255, 255, 255, 0.04)'
+            backgroundColor: 'grey.300'
           }),
           '&:hover': {
-            backgroundColor: 'rgba(255, 255, 255, 0.04)'
+            backgroundColor: 'grey.300'
           }
         }}
         {...linkProps}
@@ -45,12 +45,12 @@ export const SideNavItem = (props) => {
             component="span"
             sx={{
               alignItems: 'center',
-              color: 'neutral.400',
+              color: 'grey.500',
               display: 'inline-flex',
               justifyContent: 'center',
               mr: 2,
               ...(active && {
-                color: 'primary.main'
+                color: 'grey.800'
               })
             }}
           >
@@ -60,7 +60,7 @@ export const SideNavItem = (props) => {
         <Box
           component="span"
           sx={{
-            color: 'neutral.400',
+            color: 'grey.500',
             flexGrow: 1,
             fontFamily: (theme) => theme.typography.fontFamily,
             fontSize: 14,
@@ -68,10 +68,10 @@ export const SideNavItem = (props) => {
             lineHeight: '24px',
             whiteSpace: 'nowrap',
             ...(active && {
-              color: 'common.white'
+              color: 'grey.800'
             }),
             ...(disabled && {
-              color: 'neutral.500'
+              color: 'grey.500'
             })
           }}
         >

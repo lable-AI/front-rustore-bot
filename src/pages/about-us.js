@@ -5,14 +5,15 @@ import { Stack } from '@mui/system';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { styled } from '@mui/system';
+import {styled} from '@mui/system';
+
+//import styled from 'styled-components';
 
 const StyledCard = styled(Card)(({ theme }) => ({
   height: 400,
   width: "10%",
   display: 'flex',
   flexDirection: 'column',
-  margin: theme.spacing(2), // Добавление отступов между карточками
 }));
 
 const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
@@ -20,6 +21,17 @@ const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
   width: '100%',
   objectFit: 'cover',
 }));
+
+
+
+const StyledSlider = styled(Slider)(({ theme }) => ({
+  ".slick-slide": {
+    padding: theme.spacing(2),
+  },
+  ".slick-list": {
+    margin: -theme.spacing(2),
+  }
+}))
 
 const teamMembers = [
   {
@@ -76,79 +88,32 @@ const solutions = [
   },
 ];
 
-const NextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style }}
-      onClick={onClick}
-    />
-  );
-};
-
-const PrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style }}
-      onClick={onClick}
-    />
-  );
-};
-
 const Page = () => {
 
   const settings = {
     dots: true,
-    infinite: true,
-    speed: 500,
+    infinite: false,
+    speed: 350,
     slidesToShow: 3,
     slidesToScroll: 1,
-    centerPadding: 30,
   };
 
   return (
     <Container>
-      <Stack spacing={2}>
-        <div style={{ position: 'relative', textAlign: 'center', color: 'white' }}>
-          <img
-            src="https://i.pinimg.com/originals/f6/e2/eb/f6e2eb6e964058e88f62742d537ad612.jpg"
-            alt="Hero"
-            style={{
-              width: '100%',
-              height: '400px',
-              objectFit: 'cover',
-              filter: 'brightness(0.5)',
-            }}
-          />
-          <div
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-            }}
-          >
-            <Typography variant="h2" component="h1">
-              TEST
-            </Typography>
-          </div>
-        </div>
-        <Typography variant="body1" paragraph>
-          Мы молодая команда студентов, занимающаяся разработкой в области машинного обучения. Наша цель - создавать передовые
-          технологии и решения для различных отраслей. Мы стремимся к непрерывному развитию и всегда открыты для новых идей и
-          возможностей.
-        </Typography>
+      <Stack spacing={2} sx={{ paddingTop: '16px' }}>
         <div>
           <Typography variant="h4" gutterBottom>
             Наша команда
           </Typography>
-          <Slider {...settings}>
+          <Typography variant="body1" paragraph>
+            Мы молодая команда студентов, занимающаяся разработкой в области машинного обучения. Наша цель - создавать передовые
+            технологии и решения для различных отраслей. Мы стремимся к непрерывному развитию и всегда открыты для новых идей и
+            возможностей.
+          </Typography>
+          <StyledSlider {...settings}>
             {teamMembers.map((member, index) => (
               <StyledCard key={index} >
-                <StyledCardMedia 
+                <StyledCardMedia
                   image={member.image}
                   title={member.name}
                 />
@@ -164,8 +129,9 @@ const Page = () => {
                   </Typography>
                 </CardContent>
               </StyledCard>
+
             ))}
-          </Slider>
+          </StyledSlider>
         </div>
         <div>
           <Typography variant="h4" gutterBottom>
