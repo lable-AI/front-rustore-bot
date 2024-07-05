@@ -154,7 +154,7 @@ export function createComponents(config) {
           borderStyle: 'solid',
           borderWidth: 1,
           overflow: 'hidden',
-          borderColor: palette.neutral[200],
+          borderColor: palette.primary[200],
           transition: muiTheme.transitions.create([
             'border-color',
             'box-shadow'
@@ -194,7 +194,7 @@ export function createComponents(config) {
           '&:hover': {
             backgroundColor: palette.action.hover,
             [`& .${outlinedInputClasses.notchedOutline}`]: {
-              borderColor: palette.neutral[200]
+              borderColor: palette.primary[200]
             }
           },
           [`&.${outlinedInputClasses.focused}`]: {
@@ -217,7 +217,7 @@ export function createComponents(config) {
           lineHeight: '24px',
         },
         notchedOutline: {
-          borderColor: palette.neutral[200],
+          borderColor: palette.primary[200],
           transition: muiTheme.transitions.create([
             'border-color',
             'box-shadow'
@@ -277,8 +277,8 @@ export function createComponents(config) {
           borderBottom: 'none',
           [`& .${tableCellClasses.root}`]: {
             borderBottom: 'none',
-            backgroundColor: palette.neutral[50],
-            color: palette.neutral[700],
+            backgroundColor: palette.primary[50],
+            color: palette.primary[700],
             fontSize: 12,
             fontWeight: 600,
             lineHeight: 1,

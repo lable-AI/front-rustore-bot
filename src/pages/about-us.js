@@ -33,6 +33,10 @@ const StyledSlider = styled(Slider)(({ theme }) => ({
   }
 }))
 
+const StyledTypographyWithPadding = styled(Typography)(({ theme }) => ({
+  paddingLeft: theme.spacing(2),
+}))
+
 const teamMembers = [
   {
     name: 'Гербылев Олег',
@@ -89,28 +93,27 @@ const solutions = [
 ];
 
 const Page = () => {
-
   const settings = {
     dots: true,
     infinite: false,
     speed: 350,
-    slidesToShow: 3,
     slidesToScroll: 1,
   };
+
 
   return (
     <Container>
       <Stack spacing={2} sx={{ paddingTop: '16px' }}>
         <div>
-          <Typography variant="h4" gutterBottom>
+          <StyledTypographyWithPadding variant="h4" gutterBottom>
             Наша команда
-          </Typography>
-          <Typography variant="body1" paragraph>
+          </StyledTypographyWithPadding>
+          <StyledTypographyWithPadding variant="body1" paragraph>
             Мы молодая команда студентов, занимающаяся разработкой в области машинного обучения. Наша цель - создавать передовые
             технологии и решения для различных отраслей. Мы стремимся к непрерывному развитию и всегда открыты для новых идей и
             возможностей.
-          </Typography>
-          <StyledSlider {...settings}>
+          </StyledTypographyWithPadding>
+          <StyledSlider {...settings} slidesToShow={3} >
             {teamMembers.map((member, index) => (
               <StyledCard key={index} >
                 <StyledCardMedia
@@ -134,10 +137,10 @@ const Page = () => {
           </StyledSlider>
         </div>
         <div>
-          <Typography variant="h4" gutterBottom>
+          <StyledTypographyWithPadding variant="h4" gutterBottom>
             Наши менторы
-          </Typography>
-          <Slider {...settings} >
+          </StyledTypographyWithPadding>
+          <StyledSlider {...settings} slidesToShow={2}>
             {mentors.map((mentor, index) => (
               <StyledCard key={index} >
                 <StyledCardMedia
@@ -157,13 +160,13 @@ const Page = () => {
                 </CardContent>
               </StyledCard>
             ))}
-          </Slider>
+          </StyledSlider>
         </div>
         <div>
-          <Typography variant="h4" gutterBottom>
+          <StyledTypographyWithPadding variant="h4" gutterBottom>
             Готовые решения
-          </Typography>
-          <Slider {...settings}>
+          </StyledTypographyWithPadding>
+          <StyledSlider {...settings} slidesToShow={2}>
             {solutions.map((solution, index) => (
               <StyledCard key={index}>
                 <StyledCardMedia
@@ -180,7 +183,7 @@ const Page = () => {
                 </CardContent>
               </StyledCard>
             ))}
-          </Slider>
+          </StyledSlider>
         </div>
       </Stack>
     </Container>

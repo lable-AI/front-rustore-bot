@@ -7,6 +7,7 @@ import UserPlusIcon from '@heroicons/react/24/solid/UserPlusIcon';
 import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
 import { SvgIcon } from '@mui/material';
+import { ChatBubbleLeftEllipsisIcon, TagIcon } from '@heroicons/react/20/solid';
 
 export const items = [
   {
@@ -36,5 +37,22 @@ export const items = [
       </SvgIcon>
     )
   },
-  
+  {
+    title: "Чат",
+    path: '/chat',
+    icon: (
+      <SvgIcon fontSize="small">
+        <ChatBubbleLeftEllipsisIcon />
+      </SvgIcon>
+    )
+  },
+  {
+    title: "Поиск",
+    path: '/search',
+    icon: (
+      <SvgIcon fontSize="small">
+        <TagIcon />
+      </SvgIcon>
+    )
+  }
 ];

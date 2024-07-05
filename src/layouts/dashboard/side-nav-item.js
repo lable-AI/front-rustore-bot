@@ -1,6 +1,10 @@
 import NextLink from 'next/link';
 import PropTypes from 'prop-types';
 import { Box, ButtonBase } from '@mui/material';
+import { ourColor } from '../../theme/colors';
+import { alpha } from '@mui/material/styles';
+import { palette } from '@mui/system';
+import { grey } from '@mui/material/colors';
 
 export const SideNavItem = (props) => {
   const { active = false, disabled, external, icon, path, title } = props;
@@ -32,10 +36,10 @@ export const SideNavItem = (props) => {
           textAlign: 'left',
           width: '100%',
           ...(active && {
-            backgroundColor: 'grey.300'
+            backgroundColor: alpha(ourColor.main, 0.1)
           }),
           '&:hover': {
-            backgroundColor: 'grey.300'
+            backgroundColor: grey[100]
           }
         }}
         {...linkProps}
@@ -45,12 +49,12 @@ export const SideNavItem = (props) => {
             component="span"
             sx={{
               alignItems: 'center',
-              color: 'grey.500',
+              color: grey[500],
               display: 'inline-flex',
               justifyContent: 'center',
               mr: 2,
               ...(active && {
-                color: 'grey.800'
+                color: alpha(ourColor.main, 1)
               })
             }}
           >
@@ -60,7 +64,7 @@ export const SideNavItem = (props) => {
         <Box
           component="span"
           sx={{
-            color: 'grey.500',
+            color: grey[500],
             flexGrow: 1,
             fontFamily: (theme) => theme.typography.fontFamily,
             fontSize: 14,
@@ -68,10 +72,10 @@ export const SideNavItem = (props) => {
             lineHeight: '24px',
             whiteSpace: 'nowrap',
             ...(active && {
-              color: 'grey.800'
+              color: alpha(ourColor.main, 1)
             }),
             ...(disabled && {
-              color: 'grey.500'
+              color: alpha(grey[300], 1)
             })
           }}
         >

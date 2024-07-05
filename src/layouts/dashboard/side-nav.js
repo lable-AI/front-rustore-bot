@@ -19,6 +19,7 @@ import { Scrollbar } from 'src/components/scrollbar';
 import { items } from './config';
 import { SideNavItem } from './side-nav-item';
 import { grey } from '@mui/material/colors';
+import { alpha } from '@mui/material/styles';
 
 const SIDE_TOP_HEIGHT = 64;
 
@@ -33,18 +34,13 @@ export const SideNav = (props) => {
         height: '100%',
         '& .simplebar-content': {
           height: '100%'
-        },
-        '& .simplebar-scrollbar:before': {
-          background: '#e7e8e9'
         }
-      }}
-    >
+      }}>
       <Box
         sx={{
           display: 'flex',
           flexDirection: 'column',
           height: '100%',
-          background: grey["200"],
         }}
       >
         <Box sx={{ p: 2, height: SIDE_TOP_HEIGHT }}>

@@ -1,3 +1,5 @@
+import { ourColor } from './colors';
+
 export const createTypography = () => {
   return {
     fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
@@ -40,13 +42,15 @@ export const createTypography = () => {
       fontFamily: '\'Plus Jakarta Sans\', sans-serif',
       fontWeight: 700,
       fontSize: '3.5rem',
-      lineHeight: 1.2
+      lineHeight: 1.2,
+      color: ourColor.main
     },
     h2: {
       fontFamily: '\'Plus Jakarta Sans\', sans-serif',
       fontWeight: 700,
       fontSize: '3rem',
-      lineHeight: 1.2
+      lineHeight: 1.2,
+      color: ourColor.main
     },
     h3: {
       fontFamily: '\'Plus Jakarta Sans\', sans-serif',
@@ -64,7 +68,8 @@ export const createTypography = () => {
       fontFamily: '\'Plus Jakarta Sans\', sans-serif',
       fontWeight: 700,
       fontSize: '1.5rem',
-      lineHeight: 1.2
+      lineHeight: 1.2,
+
     },
     h6: {
       fontFamily: '\'Plus Jakarta Sans\', sans-serif',
