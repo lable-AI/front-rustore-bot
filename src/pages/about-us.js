@@ -88,6 +88,7 @@ const Page = () => {
 		<Stack spacing={2}
 			   sx={{ paddingTop: '16px' }}>
 			<div>
+
 				<StyledTypographyWithPadding variant="h4"
 											 gutterBottom>
 					Наша команда
