@@ -3,28 +3,28 @@ import { Box } from '@mui/material';
 import { Layout as DashboardLayout } from '../layouts/dashboard/layout';
 
 const Page = () => (
-  <>
-    <Head>
-      <title>
+	<>
+		<Head>
+			<title>
         Main | Label AI
-      </title>
-    </Head>
-    <Box
-      component="main"
-      sx={{
-        flexGrow: 1,
-        py: 8
-      }}
-    >
+			</title>
+		</Head>
+		<Box
+			component="main"
+			sx={{
+				flexGrow: 1,
+				py: 8
+			}}
+		>
       Чат
-    </Box>
-  </>
+		</Box>
+	</>
 );
 
 Page.getLayout = (page) => (
-  <DashboardLayout>
-    {page}
-  </DashboardLayout>
+	<DashboardLayout>
+		{page}
+	</DashboardLayout>
 );
 
 export default Page;

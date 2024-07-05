@@ -56,19 +56,19 @@ console.log('Hello, world!');
 `;
 
 const Page = () => (
-  <Container sx={{
-    padding: '16px',
-  }}>
-    <MarkdownRenderer>
-      {markdown}
-    </MarkdownRenderer>
-  </Container>
-  );
+	<Container sx={{
+		padding: '16px',
+	}}>
+		<MarkdownRenderer>
+			{markdown}
+		</MarkdownRenderer>
+	</Container>
+);
 
 Page.getLayout = (page) => (
-  <DashboardLayout>
-    {page}
-  </DashboardLayout>
+	<DashboardLayout>
+		{page}
+	</DashboardLayout>
 );
 
 export default Page;
