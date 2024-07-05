@@ -23,9 +23,6 @@ export function createTheme() {
 		components,
 		palette,
 		shadows,
-		shape: {
-			borderRadius: 8
-		},
 		typography
 	});
 }

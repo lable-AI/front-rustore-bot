@@ -1,4 +1,5 @@
 import { alpha } from '@mui/material/styles';
+import { grey } from '@mui/material/colors';
 
 const withAlphas = (color) => {
 	return {
@@ -14,6 +15,10 @@ const withAlphas = (color) => {
 export const ourColor = {
 	lightest: '#E2BBE9', light: '#9B86BD', main: '#7776B3', dark: '#5A639C'
 };
+
+export const system ={
+	divider: grey[300]
+}
 
 export const neutral = {
 	50: '#F8F9FA',

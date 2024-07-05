@@ -1,6 +1,6 @@
 import { common, grey } from '@mui/material/colors';
 import { alpha } from '@mui/material/styles';
-import { error, info, neutral, ourColor, success, warning } from './colors';
+import { error, info, neutral, ourColor, success, system, warning } from './colors';
 
 export function createPalette() {
 	return {
@@ -16,7 +16,7 @@ export function createPalette() {
 			default: common.white,
 			paper: common.white
 		},
-		divider: grey[300],
+		divider: system.divider,
 		error,
 		info,
 		mode: 'light',
