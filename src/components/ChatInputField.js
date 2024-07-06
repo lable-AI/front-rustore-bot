@@ -42,6 +42,13 @@ const ChatInputField = ({onSend}) =>{
 				label={'Ваш запрос'}
 				onChange={(event) => {
 					setSearchValue(event.target.value);
+				}}
+			  	onKeyDown={e => {
+
+					  if(e.key==='Enter') {
+						  e.preventDefault();
+						  sendHandler();
+					  }
 				}}/>
 			  <IconButton onClick={sendHandler}
 						  disabled={searchValue.length === 0}
@@ -53,12 +60,6 @@ const ChatInputField = ({onSend}) =>{
 				  }}/>
 			  </IconButton>
 		  </Stack>
-		  {/*<StyledLoadingIndicator variant={'body2'}>*/}
-			{/*  {mutation.isLoading && 'Печатает...'}*/}
-		  {/*</StyledLoadingIndicator>*/}
-		  {/*<StyledErrorIndicator variant={'body2'}>*/}
-			{/*  {mutation.isError && mutation.error.message}*/}
-		  {/*</StyledErrorIndicator>*/}
 	  </Box>
 	);
 };
