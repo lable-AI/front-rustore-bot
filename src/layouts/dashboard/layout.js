@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import { SideNav } from './side-nav';
 import { TopNav } from './top-nav';
 import { usePathname } from 'next/navigation';
+import { Box } from '@mui/material';
 
 const SIDE_NAV_WIDTH = 280;
 
@@ -38,17 +39,17 @@ export const Layout = (props) => {
 	);
 
 	return (
-		<>
-			<TopNav onNavOpen={() => setOpenNav(true)} />
-			<SideNav
-				onClose={() => setOpenNav(false)}
-				open={openNav}
-			/>
-			<LayoutRoot>
-				<LayoutContainer>
-					{children}
-				</LayoutContainer>
-			</LayoutRoot>
-		</>
+	  <>
+		  <TopNav onNavOpen={() => setOpenNav(true)} />
+		  <SideNav
+			onClose={() => setOpenNav(false)}
+			open={openNav}
+		  />
+		  <LayoutRoot>
+			  <LayoutContainer>
+				  {children}
+			  </LayoutContainer>
+		  </LayoutRoot>
+	  </>
 	);
 };

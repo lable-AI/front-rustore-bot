@@ -11,12 +11,14 @@ const StyledLoadingIndicator = styled(Typography)(({ theme }) => ({
 	color: theme.palette.text.secondary,
 	marginLeft: '8px',
 	padding: '4px',
+	position: 'absolute',
 }))
 
 const StyledErrorIndicator = styled(Typography)(({ theme }) => ({
 	color: theme.palette.error.main,
 	marginLeft: '8px',
 	padding: '4px',
+	position: 'absolute',
 }))
 
 const ChatInputField = ({onSend}) =>{
@@ -30,8 +32,7 @@ const ChatInputField = ({onSend}) =>{
 
 
 	return (
-	  <Box>
-		  { mutation.isError && <Box color={'red'}>error: {mutation.error.message}</Box> }
+	  <Box sx={{paddingBottom: '16px'}}>
 		  <Stack width={'100%'} direction={'row'} alignItems={'start'}>
 			  <TextField
 				multiline
@@ -52,12 +53,12 @@ const ChatInputField = ({onSend}) =>{
 				  }}/>
 			  </IconButton>
 		  </Stack>
-		  <StyledLoadingIndicator variant={'body2'}>
-			  {mutation.isLoading && 'Печатает...'}
-		  </StyledLoadingIndicator>
-		  <StyledErrorIndicator variant={'body2'}>
-			  {mutation.isError && mutation.error.message}
-		  </StyledErrorIndicator>
+		  {/*<StyledLoadingIndicator variant={'body2'}>*/}
+			{/*  {mutation.isLoading && 'Печатает...'}*/}
+		  {/*</StyledLoadingIndicator>*/}
+		  {/*<StyledErrorIndicator variant={'body2'}>*/}
+			{/*  {mutation.isError && mutation.error.message}*/}
+		  {/*</StyledErrorIndicator>*/}
 	  </Box>
 	);
 };

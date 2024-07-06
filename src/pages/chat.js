@@ -34,27 +34,22 @@ export const RequestContext = createContext(null);
 const Page = () => {
 	const [messages, setMessages] = useState([]);
 
-	const getAnswer = (result) => axios.get('https://668859650bc7155dc01b29df.mockapi.io/responses')
-
-	const mutation = useMutation(getAnswer);
+	// const getAnswer = (result) => axios.get('https://668859650bc7155dc01b29df.mockapi.io/responses')
+	//
+	// const mutation = useMutation(getAnswer);
 
 	const saveAnswer = (request) => {
-		setMessages(prev => {
-			const nw = prev;
-			nw.unshift({ request });
-			return nw;
-		});
-		mutation.mutate(request);
+		setMessages(prev => [{request}, ...prev]);
 	};
-
-	useEffect(() => {
-		if (mutation.isSuccess && mutation.data.data) {
-			setMessages(prev => mutation.data.data.concat(prev));
-		}
-	}, [mutation.isSuccess]);
+	//
+	// useEffect(() => {
+	// 	if (mutation.isSuccess && mutation.data.data) {
+	// 		setMessages(prev => mutation.data.data.concat(prev));
+	// 	}
+	// }, [mutation.isSuccess]);
 
 	return (
-	  <RequestContext.Provider value={{ mutation }}>
+	  <RequestContext.Provider value={{ }}>
 		<Container component="main">
 			<Stack spacing={4}>
 				<Stack>

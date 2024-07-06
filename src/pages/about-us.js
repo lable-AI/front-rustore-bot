@@ -6,8 +6,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { styled } from '@mui/system';
+import { mentors, solutions, teamMembers } from '../other/data';
 
-//import styled from 'styled-components';
 
 const StyledCard = styled(Card)(({ theme }) => ({
 	height: 400, width: '10%', display: 'flex', flexDirection: 'column'
@@ -25,82 +25,26 @@ const StyledSlider = styled(Slider)(({ theme }) => ({
 	}
 }));
 
-const StyledTypographyWithPadding = styled(Typography)(({ theme }) => ({
-	paddingLeft: theme.spacing(2)
-}));
-
-const teamMembers = [
-	{
-		name: 'Гербылев Олег',
-		role: 'Team Leader',
-		description: 'Олег отвечает за техническую часть, ставит задачи и занимается разработкой.',
-		image: '/assets/team/oleg.jpg'
-	}, {
-		name: 'Артур Насов',
-		role: 'ML Developer',
-		description: 'Артур занимается разработкой и настройкой разных ML-моделей.',
-		image: '/assets/team/artu.jpeg'
-	}, {
-		name: 'Александр Шамшурин',
-		role: 'Designer',
-		description: 'Александр отвечает за дизайн продукта и представление его публике.',
-		image: '/assets/team/alek.jpeg'
-	}, {
-		name: 'Никита Трошин',
-		role: 'Frontend Developer',
-		description: 'Никита отвечает за разработку визуальной части продукта.',
-		image: '/assets/team/nik.jpeg'
-	}
-];
-
-const mentors = [
-	{
-		name: 'Алексей Иванов',
-		role: 'Senior Data Scientist',
-		description: 'Алексей консультирует нас по вопросам архитектуры и оптимизации моделей.',
-		image: '/assets/team/nig.jpeg'
-	}, {
-		name: 'Мария Сидорова',
-		role: 'Tech Lead',
-		description: 'Мария помогает нам в разработке и масштабировании наших приложений.',
-		image: 'https://via.placeholder.com/150'
-	}
-];
-
-const solutions = [
-	{
-		title: 'Система рекомендаций',
-		description: 'Решение для персонализированных рекомендаций продуктов в интернет-магазинах.',
-		image: 'https://via.placeholder.com/150'
-	}, {
-		title: 'Анализ текста',
-		description: 'Инструмент для анализа тональности текста и извлечения ключевых слов.',
-		image: 'https://via.placeholder.com/150'
-	}
-];
-
 const Page = () => {
 	const settings = {
 		dots: true, infinite: false, speed: 350, slidesToScroll: 1
 	};
 
-	return (<Container>
-		<Stack spacing={2}
-			   sx={{ paddingTop: '16px' }}>
+	return (<Container component={'main'}>
+		<Stack spacing={2}>
 			<div>
-
-				<StyledTypographyWithPadding variant="h4"
-											 gutterBottom>
+				<Typography variant="h4"
+							gutterBottom>
 					Наша команда
-				</StyledTypographyWithPadding>
-				<StyledTypographyWithPadding variant="body1"
-											 paragraph>
+				</Typography>
+				<Typography variant="body1"
+							paragraph>
 					Мы молодая команда студентов, занимающаяся разработкой в области машинного
 					обучения. Наша цель - создавать передовые
 					технологии и решения для различных отраслей. Мы стремимся к непрерывному
 					развитию и всегда открыты для новых идей и
 					возможностей.
-				</StyledTypographyWithPadding>
+				</Typography>
 				<StyledSlider {...settings}
 							  slidesToShow={3}>
 					{teamMembers.map((member, index) => (<StyledCard key={index}>
@@ -125,60 +69,6 @@ const Page = () => {
 					  </StyledCard>
 
 					))}
-				</StyledSlider>
-			</div>
-			<div>
-				<StyledTypographyWithPadding variant="h4"
-											 gutterBottom>
-					Наши менторы
-				</StyledTypographyWithPadding>
-				<StyledSlider {...settings}
-							  slidesToShow={2}>
-					{mentors.map((mentor, index) => (<StyledCard key={index}>
-						<StyledCardMedia
-						  image={mentor.image}
-						  title={mentor.name}
-						/>
-						<CardContent sx={{ flexGrow: 1 }}>
-							<Typography variant="h5"
-										component="h2">
-								{mentor.name}
-							</Typography>
-							<Typography variant="subtitle1"
-										color="textSecondary">
-								{mentor.role}
-							</Typography>
-							<Typography variant="body2"
-										component="p">
-								{mentor.description}
-							</Typography>
-						</CardContent>
-					</StyledCard>))}
-				</StyledSlider>
-			</div>
-			<div>
-				<StyledTypographyWithPadding variant="h4"
-											 gutterBottom>
-					Готовые решения
-				</StyledTypographyWithPadding>
-				<StyledSlider {...settings}
-							  slidesToShow={2}>
-					{solutions.map((solution, index) => (<StyledCard key={index}>
-						<StyledCardMedia
-						  image={solution.image}
-						  title={solution.title}
-						/>
-						<CardContent sx={{ flexGrow: 1 }}>
-							<Typography variant="h5"
-										component="h2">
-								{solution.title}
-							</Typography>
-							<Typography variant="body2"
-										component="p">
-								{solution.description}
-							</Typography>
-						</CardContent>
-					</StyledCard>))}
 				</StyledSlider>
 			</div>
 		</Stack>
