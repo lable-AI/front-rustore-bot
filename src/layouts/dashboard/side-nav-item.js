@@ -33,13 +33,14 @@ export const SideNavItem = (props) => {
 					pl: '16px',
 					pr: '16px',
 					py: '6px',
+					transition: '0.1s',
 					textAlign: 'left',
 					width: '100%',
 					...(active && {
 						backgroundColor: alpha(ourColor.main, 0.1)
 					}),
 					'&:hover': {
-						backgroundColor: grey[100]
+						backgroundColor: alpha(ourColor.main, 0.05)
 					}
 				}}
 				{...linkProps}

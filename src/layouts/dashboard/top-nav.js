@@ -10,6 +10,7 @@ import {
 	useMediaQuery
 } from '@mui/material';
 import { grey } from '@mui/material/colors';
+import { alpha } from '@mui/material/styles';
 
 const SIDE_NAV_WIDTH = 280;
 const TOP_NAV_HEIGHT = 64;
@@ -20,7 +21,7 @@ export const TopNav = (props) => {
 			<Box
 				component="header"
 				sx={{
-					backgroundColor: (theme) => '#fff',
+					backgroundColor: (theme) => alpha(theme.palette.background.paper,1),
 					position: 'sticky',
 					left: {
 						lg: `${SIDE_NAV_WIDTH}px`

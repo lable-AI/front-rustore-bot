@@ -43,14 +43,12 @@ export const createTypography = () => {
 			fontWeight: 700,
 			fontSize: '3.5rem',
 			lineHeight: 1.2,
-			color: ourColor.main
 		},
 		h2: {
 			fontFamily: '\'Plus Jakarta Sans\', sans-serif',
 			fontWeight: 700,
 			fontSize: '3rem',
 			lineHeight: 1.2,
-			color: ourColor.main
 		},
 		h3: {
 			fontFamily: '\'Plus Jakarta Sans\', sans-serif',

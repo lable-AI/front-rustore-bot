@@ -30,8 +30,32 @@ const Page = () => {
 		dots: true, infinite: false, speed: 350, slidesToScroll: 1
 	};
 
-	return (<Container component={'main'}>
+	return (<Container component={'main'} sx={{paddingBottom: '32px'}}>
 		<Stack spacing={2}>
+			<div style={{ position: 'relative', textAlign: 'center', color: 'white' }}>
+				<img
+				  src="https://kartinki.pics/uploads/posts/2020-07/1593666791_80-p-neitralnii-fon-94.jpg"
+				  alt="Hero"
+				  style={{
+					  width: '100%',
+					  height: '200px',
+					  objectFit: 'cover',
+					  borderRadius: '12px'
+				  }}
+				/>
+				<div
+				  style={{
+					  position: 'absolute',
+					  top: '50%',
+					  left: '50%',
+					  transform: 'translate(-50%, -50%)',
+				  }}
+				>
+					<Typography variant="h2" component="h2">
+						LABEL AI
+					</Typography>
+				</div>
+			</div>
 			<div>
 				<Typography variant="h4"
 							gutterBottom>
