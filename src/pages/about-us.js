@@ -32,37 +32,36 @@ const Page = () => {
 
 	return (<Container component={'main'} sx={{paddingBottom: '32px'}}>
 		<Stack spacing={2}>
-			<div style={{ position: 'relative', textAlign: 'center', color: 'white' }}>
-				<img
-				  src="https://kartinki.pics/uploads/posts/2020-07/1593666791_80-p-neitralnii-fon-94.jpg"
-				  alt="Hero"
-				  style={{
-					  width: '100%',
-					  height: '200px',
-					  objectFit: 'cover',
-					  borderRadius: '12px'
-				  }}
-				/>
-				<div
-				  style={{
-					  position: 'absolute',
-					  top: '50%',
-					  left: '50%',
-					  transform: 'translate(-50%, -50%)',
-				  }}
-				>
-					<Typography variant="h2" component="h2">
-						LABEL AI
-					</Typography>
-				</div>
-			</div>
-			<div>
-				<Typography variant="h4"
-							gutterBottom>
-					Наша команда
-				</Typography>
+
+			<Stack spacing={3}>
+				<Stack spacing={1} direction="row" alignItems={'center'}>
+					<div style={{
+						borderRadius: '12px',
+						padding: '12px 16px',
+						width: 'min-content',
+						background: 'radial-gradient(circle, hsla(263, 29%, 63%, 0.2) 0%, hsla(291, 51%, 82%, 0.2) 100%)',
+						filter: 'progid: DXImageTransform.Microsoft.gradient( startColorstr="#9B86BD", endColorstr="#E2BBE9", GradientType=1 )'
+					}}>
+						<Typography variant={'h3'}
+									sx={{
+										whiteSpace: 'nowrap'
+									}}
+									color={((theme) => theme.palette.text.primary)}>Наша команда</Typography>
+					</div>
+					{/*<Typography variant={'h3'}*/}
+					{/*			sx={{*/}
+
+					{/*			}}*/}
+					{/*			color={((theme) => theme.palette.text.secondary)}>Label AI</Typography>*/}
+				</Stack>
+
 				<Typography variant="body1"
-							paragraph>
+							paragraph
+				sx={{
+					paddingLeft: '16px',
+					borderLeft: '2px dashed',
+					borderColor: ((theme) => theme.palette.divider)
+				}}>
 					Мы молодая команда студентов, занимающаяся разработкой в области машинного
 					обучения. Наша цель - создавать передовые
 					технологии и решения для различных отраслей. Мы стремимся к непрерывному
@@ -94,7 +93,7 @@ const Page = () => {
 
 					))}
 				</StyledSlider>
-			</div>
+			</Stack>
 		</Stack>
 	</Container>);
 };

@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { Stack, styled, useTheme } from '@mui/system';
-import { Box, CircularProgress, Divider, Paper, Typography } from '@mui/material';
+import { Box, CircularProgress, Divider, Link, Paper, Typography } from '@mui/material';
 import { system } from '../theme/colors';
 import ChatAnswerItem from './ChatAnswerItem';
 import axios from 'axios';
 import { useQuery } from 'react-query';
-import { CheckRounded, RadioButtonChecked, RadioButtonUnchecked } from '@mui/icons-material';
+import {
+	CheckRounded,
+	OpenInNew,
+	RadioButtonChecked,
+	RadioButtonUnchecked, ReadMore
+} from '@mui/icons-material';
+import { grey } from '@mui/material/colors';
 
 const StyledMessageItem = styled(Paper)(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'column',
-	padding: "10px 14px",
 }));
+
+
 
 const ChatMessageItem = ({ request, key }) => {
 	const [answer, setAnswer] = useState({});
@@ -23,6 +30,7 @@ const ChatMessageItem = ({ request, key }) => {
 
 	useEffect(() => {
 		if(isSuccess && data.data){
+			console.log(data.data);
 			setAnswer(data.data)
 		}
 	}, [isSuccess]);
@@ -34,16 +42,15 @@ const ChatMessageItem = ({ request, key }) => {
 	return (<>
 		<StyledMessageItem elevation={0}>
 			<Stack spacing={2}>
-				<Stack spacing={1} direction="row" alignItems="center">
+				<Stack spacing={2} direction="row" alignItems="center" sx={{paddingLeft: '8px'}}>
 					<CircularProgress variant={isLoading ? 'indeterminate' : 'determinate'} size={14} />
-					<Typography variant="h6">{request}</Typography>
+					<Typography sx={{
+						transition: '0.2s',
+						transform: isSuccess && 'translateX(-28px)'
+					}} variant="h6">{request}</Typography>
 				</Stack>
 
-				{isSuccess && (
-				  <>
-					  <ChatAnswerItem {...answer} />
-				  </>
-				)}
+				{isSuccess && <ChatAnswerItem {...answer} />}
 			</Stack>
 
 		</StyledMessageItem>
