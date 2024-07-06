@@ -6,7 +6,9 @@ const StyledAnswerItem = styled(Paper)(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'column',
 	padding: "8px 12px",
-	background: grey[100],
+	// background: grey[100],
+	border: '1px solid',
+	borderColor: theme.palette.divider,
 	width: 'auto'
 }));
 

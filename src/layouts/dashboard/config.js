@@ -20,15 +20,6 @@ export const items = [
 		)
 	},
 	{
-		title: 'Продукт',
-		path: '/main',
-		icon: (
-			<SvgIcon fontSize="small">
-				<ShoppingBagIcon />
-			</SvgIcon>
-		)
-	},
-	{
 		title: 'О нас',
 		path: '/about-us',
 		icon: (
