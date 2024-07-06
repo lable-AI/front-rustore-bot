@@ -13,7 +13,13 @@ const clientSideEmotionCache = createEmotionCache();
 
 const SplashScreen = () => null;
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries:{
+			refetchOnWindowFocus: false
+		}
+	}
+})
 
 const App = (props) => {
 	const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;

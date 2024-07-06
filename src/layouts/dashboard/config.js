@@ -45,14 +45,5 @@ export const items = [
 				<ChatBubbleLeftEllipsisIcon />
 			</SvgIcon>
 		)
-	},
-	{
-		title: 'Поиск',
-		path: '/search',
-		icon: (
-			<SvgIcon fontSize="small">
-				<TagIcon />
-			</SvgIcon>
-		)
 	}
 ];
