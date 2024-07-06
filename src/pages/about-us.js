@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Card, CardContent, CardMedia } from '@mui/material';
+import { Container, Typography, Card, CardContent, CardMedia, Link, Divider } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { Stack } from '@mui/system';
 import Slider from 'react-slick';
@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { styled } from '@mui/system';
 import { mentors, solutions, teamMembers } from '../other/data';
+import { Telegram } from '@mui/icons-material';
 
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -14,14 +15,19 @@ const StyledCard = styled(Card)(({ theme }) => ({
 }));
 
 const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
-	height: 200, width: '100%', objectFit: 'contain'
+	height: 200, width: '100%',
+	objectPosition: '0 250px'
 }));
 
 const StyledSlider = styled(Slider)(({ theme }) => ({
 	'.slick-slide': {
-		padding: theme.spacing(2)
+		padding: theme.spacing(2),
+
 	}, '.slick-list': {
 		margin: -theme.spacing(2)
+	},
+	'.slick-slide a': {
+		pointerEvents: 'all'
 	}
 }));
 
@@ -76,18 +82,30 @@ const Page = () => {
 							title={member.name}
 						  />
 						  <CardContent sx={{ flexGrow: 1 }}>
-							  <Typography variant="h5"
-										  component="h2">
-								  {member.name}
-							  </Typography>
-							  <Typography variant="subtitle1"
-										  color="textSecondary">
-								  {member.role}
-							  </Typography>
-							  <Typography variant="body2"
-										  component="p">
-								  {member.description}
-							  </Typography>
+							  <Stack spacing={2}>
+								  <Stack spacing={2}>
+									  <Stack>
+										  <Typography variant="h5"
+													  component="h2">
+											  {member.name}
+										  </Typography>
+										  <Typography variant="subtitle1"
+													  color="textSecondary">
+											  {member.role}
+										  </Typography>
+									  </Stack>
+									  <Typography variant="body2"
+												  component="p">
+										  {member.description}
+									  </Typography>
+									  <Divider/>
+									  <Stack>
+										  <Link href={member.tg} justifyItems={'center'}>
+											  <Telegram />
+										  </Link>
+									  </Stack>
+								  </Stack>
+							  </Stack>
 						  </CardContent>
 					  </StyledCard>
 
