@@ -5,6 +5,7 @@ import { system } from '../theme/colors';
 import ChatAnswerItem from './ChatAnswerItem';
 import axios from 'axios';
 import { useQuery } from 'react-query';
+import { CheckRounded, RadioButtonChecked, RadioButtonUnchecked } from '@mui/icons-material';
 
 const StyledMessageItem = styled(Paper)(({ theme }) => ({
 	display: 'flex',
@@ -34,8 +35,8 @@ const ChatMessageItem = ({ request, key }) => {
 		<StyledMessageItem elevation={0}>
 			<Stack spacing={2}>
 				<Stack spacing={1} direction="row" alignItems="center">
-					{ isLoading && <CircularProgress size={14} /> }
-					<Typography sx={{paddingLeft: "8px"}} variant="h6">{request}</Typography>
+					<CircularProgress variant={isLoading ? 'indeterminate' : 'determinate'} size={14} />
+					<Typography variant="h6">{request}</Typography>
 				</Stack>
 
 				{isSuccess && (
