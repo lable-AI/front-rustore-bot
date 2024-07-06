@@ -14,7 +14,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 }));
 
 const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
-	height: 200, width: '100%', objectFit: 'cover'
+	height: 200, width: '100%', objectFit: 'contain'
 }));
 
 const StyledSlider = styled(Slider)(({ theme }) => ({
@@ -34,22 +34,22 @@ const teamMembers = [
 		name: 'Гербылев Олег',
 		role: 'Team Leader',
 		description: 'Олег отвечает за техническую часть, ставит задачи и занимается разработкой.',
-		image: 'https://sun9-23.userapi.com/impg/m64YdrZKN1f-rU114U1jzkwHC2Qy_0LrPTAMig/O2zhmMCBzYQ.jpg?size=853x1280&quality=95&sign=eeea99bf3952f4bab2e92cdebe3f7256&type=album'
+		image: '/assets/team/oleg.jpg'
 	}, {
 		name: 'Артур Насов',
 		role: 'ML Developer',
 		description: 'Артур занимается разработкой и настройкой разных ML-моделей.',
-		image: 'https://via.placeholder.com/150'
+		image: '/assets/team/artu.jpeg'
 	}, {
 		name: 'Александр Шамшурин',
 		role: 'Designer',
 		description: 'Александр отвечает за дизайн продукта и представление его публике.',
-		image: 'https://via.placeholder.com/150'
+		image: '/assets/team/alek.jpeg'
 	}, {
 		name: 'Никита Трошин',
 		role: 'Frontend Developer',
 		description: 'Никита отвечает за разработку визуальной части продукта.',
-		image: 'https://via.placeholder.com/150'
+		image: '/assets/team/nik.jpeg'
 	}
 ];
 
@@ -58,7 +58,7 @@ const mentors = [
 		name: 'Алексей Иванов',
 		role: 'Senior Data Scientist',
 		description: 'Алексей консультирует нас по вопросам архитектуры и оптимизации моделей.',
-		image: 'https://via.placeholder.com/150'
+		image: '/assets/team/nig.jpeg'
 	}, {
 		name: 'Мария Сидорова',
 		role: 'Tech Lead',
