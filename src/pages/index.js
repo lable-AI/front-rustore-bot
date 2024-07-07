@@ -13,8 +13,9 @@ const markdown = `
 - Парсер сайта https://github.com/hackaton-labelAI/chat-bot
 - Сохранённая информация https://github.com/hackaton-labelAI/cc-data
 - Поиск https://github.com/hackaton-labelAI/cc-back
+### Для проверки готового решения** Регистрируем на платформе https://caila.io/
 
-**Для проверки готового решения** перейдите на https://caila.io/app/just-ai/mlp-gpt-chat-app.
+перейдите на https://caila.io/app/just-ai/mlp-gpt-chat-app.
 Далее нам надо добавить наш сервис ![img.png](https://github.com/hackaton-labelAI/cc-back/raw/main/img.png)
 Далее нажимаем на кнопку выбора сервиса и переходим в режим разработчика
 ![img_1.png](https://github.com/hackaton-labelAI/cc-back/raw/main/img_1.png)
