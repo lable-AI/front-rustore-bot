@@ -12,7 +12,7 @@ import { ChatBubbleLeftEllipsisIcon, TagIcon } from '@heroicons/react/20/solid';
 export const items = [
 	{
 		title: 'Информация о продукте',
-		path: '/readme',
+		path: '/',
 		icon: (
 			<SvgIcon fontSize="small">
 				<ChartBarIcon />

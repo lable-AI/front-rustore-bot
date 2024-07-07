@@ -22,9 +22,17 @@ const StyledMessageItem = styled(Paper)(({ theme }) => ({
 
 const ChatMessageItem = ({ request, key }) => {
 	const [answer, setAnswer] = useState({});
-	// const [isLoading, setLoading] = useState(false);
 
-	const getAnswer = () => axios.get('https://668859650bc7155dc01b29df.mockapi.io/responses/1')
+	const getAnswer = () => axios.post('https://caila.io/api/adapters/openai/chat/completions', {
+		model:"1000005888/cc-rag",
+		messages:[{"role":"user","content":"Что такое RuStore?"}],
+		stream:false
+	}, {
+		headers:{
+			'content-type': 'application/json',
+			'authorization': 'Bearer 1000005888.65087.FejKg0Er4BQAsEeev4SQCZdcbtG4dIrCxkO7qqTU'
+		}
+	})
 
 	const {isError, data, error, isSuccess, isLoading} = useQuery('getAnswer' + key, getAnswer)
 
@@ -34,10 +42,6 @@ const ChatMessageItem = ({ request, key }) => {
 			setAnswer(data.data)
 		}
 	}, [isSuccess]);
-	//
-	// useEffect(() => {
-	// 	setLoading(isPending)
-	// }, [isPending])
 
 	return (<>
 		<StyledMessageItem elevation={0}>

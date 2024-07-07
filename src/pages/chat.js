@@ -23,7 +23,7 @@ import { useMutation, useQuery, useQueryClient } from 'react-query';
 import axios from 'axios';
 import { grey } from '@mui/material/colors';
 import ChatMessageItem from '../components/ChatMessageItem';
-import Readme from './readme';
+import Readme from './index';
 import ChatInputField from '../components/ChatInputField';
 import ChatAnswerItem from '../components/ChatAnswerItem';
 import ChatMessageListEmpty from '../components/ChatMessageListEmpty';
@@ -34,19 +34,9 @@ export const RequestContext = createContext(null);
 const Page = () => {
 	const [messages, setMessages] = useState([]);
 
-	// const getAnswer = (result) => axios.get('https://668859650bc7155dc01b29df.mockapi.io/responses')
-	//
-	// const mutation = useMutation(getAnswer);
-
 	const saveAnswer = (request) => {
 		setMessages(prev => [{request}, ...prev]);
 	};
-	//
-	// useEffect(() => {
-	// 	if (mutation.isSuccess && mutation.data.data) {
-	// 		setMessages(prev => mutation.data.data.concat(prev));
-	// 	}
-	// }, [mutation.isSuccess]);
 
 	return (
 	  <RequestContext.Provider value={{ saveAnswer }}>

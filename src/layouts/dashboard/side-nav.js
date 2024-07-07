@@ -60,7 +60,7 @@ export const SideNav = (props) => {
 						/>);
 					})}
 				</Stack>
-				<Link href={'/'} sx={{textDecoration: 'none', cursor: 'pointer'}}>
+				<Link href={'https://caila.io/app/just-ai/mlp-gpt-chat-app'} target={'_blank'} sx={{textDecoration: 'none', cursor: 'pointer'}}>
 					<Stack direction={'row'} spacing={1}>
 						<Handyman sx={{opacity: '0.6'}} fontSize={'small'}/>
 						<Typography variant={'subtitle2'}>Режим отладки</Typography>
@@ -77,7 +77,7 @@ export const SideNav = (props) => {
 	  PaperProps={{
 		  sx: {
 			  backgroundColor: 'neutral.200', color: 'common.white', width: 280,
-			  background: alpha(ourColor.lightest, 0.2)
+			  background: '#f6eff9'
 		  }
 	  }}
 	  variant={'permanent'}>

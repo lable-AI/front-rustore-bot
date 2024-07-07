@@ -7,6 +7,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import { ourColor } from '../theme/colors';
+import { grey } from '@mui/material/colors';
 // import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 const SyntaxHighlighter = dynamic(() => import('react-syntax-highlighter').then(mod => mod.Prism), { ssr: false });
 const vs = dynamic(() => import('react-syntax-highlighter/dist/esm/styles/prism').then(mod => mod.vs), { ssr: false });
@@ -78,13 +79,13 @@ export function MarkdownRenderer({children}) {
 					);
 				},
 				strong({ children }) {
-					return <strong style={{ color: ourColor.main }}>{children}</strong>;
+					return <strong style={{ color: grey[800] }}>{children}</strong>;
 				},
 				h1({ children }) {
-					return <h1 style={{ color: ourColor.main }}>{children}</h1>;
+					return <h1 style={{ color: grey[900] }}>{children}</h1>;
 				},
 				h2({ children }) {
-					return <h2 style={{ color: ourColor.main }}>{children}</h2>;
+					return <h2 style={{ color: grey[800] }}>{children}</h2>;
 				},
 			}}
 		>
