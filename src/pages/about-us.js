@@ -8,6 +8,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { styled } from '@mui/system';
 import { mentors, solutions, teamMembers } from '../other/data';
 import { Telegram } from '@mui/icons-material';
+import { ourColor } from '../theme/colors';
 
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -100,7 +101,7 @@ const Page = () => {
 									  </Typography>
 									  <Divider/>
 									  <Stack>
-										  <Link href={member.tg} justifyItems={'center'}>
+										  <Link href={member.tg} justifyItems={'center'} color={ourColor.lightest}>
 											  <Telegram />
 										  </Link>
 									  </Stack>

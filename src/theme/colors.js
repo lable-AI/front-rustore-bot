@@ -17,7 +17,7 @@ export const ourColor = {
 };
 
 export const system ={
-	divider: alpha(grey[400], 0.5)
+	divider: alpha(grey[400], 0.3)
 }
 
 export const neutral = {
