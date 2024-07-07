@@ -22,14 +22,15 @@ const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
 
 const StyledSlider = styled(Slider)(({ theme }) => ({
 	'.slick-slide': {
-		padding: theme.spacing(2),
+		padding: theme.spacing(3),
+		paddingLeft: 0
 
 	}, '.slick-list': {
-		margin: -theme.spacing(2)
+		margin: -theme.spacing(2),
 	},
 	'.slick-slide a': {
 		pointerEvents: 'all'
-	}
+	},
 }));
 
 const Page = () => {
@@ -45,15 +46,28 @@ const Page = () => {
 					<div style={{
 						borderRadius: '12px',
 						padding: '12px 16px',
-						width: 'min-content',
+						width: '100%',
+						height: '200px',
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
 						background: 'radial-gradient(circle, hsla(263, 29%, 63%, 0.2) 0%, hsla(291, 51%, 82%, 0.2) 100%)',
 						filter: 'progid: DXImageTransform.Microsoft.gradient( startColorstr="#9B86BD", endColorstr="#E2BBE9", GradientType=1 )'
 					}}>
-						<Typography variant={'h3'}
-									sx={{
-										whiteSpace: 'nowrap'
-									}}
-									color={((theme) => theme.palette.text.primary)}>Наша команда</Typography>
+						<Stack spacing={1} alignItems={'center'}>
+							<Typography variant={'h3'}
+										sx={{
+											whiteSpace: 'nowrap'
+										}}
+										color={((theme) => theme.palette.text.primary)}>Label AI</Typography>
+							<Typography variant={'body1'}
+										sx={{
+											whiteSpace: 'nowrap',
+											opacity: '0.5'
+										}}
+										color={((theme) => theme.palette.text.primary)}>Наша команда</Typography>
+						</Stack>
+
 					</div>
 					{/*<Typography variant={'h3'}*/}
 					{/*			sx={{*/}
@@ -66,7 +80,7 @@ const Page = () => {
 							paragraph
 				sx={{
 					paddingLeft: '16px',
-					borderLeft: '2px dashed',
+					borderLeft: '4px solid',
 					borderColor: ((theme) => theme.palette.divider)
 				}}>
 					Мы молодая команда студентов, занимающаяся разработкой в области машинного
@@ -99,8 +113,7 @@ const Page = () => {
 												  component="p">
 										  {member.description}
 									  </Typography>
-									  <Divider/>
-									  <Stack>
+									  <Stack sx={{position: 'absolute', bottom: '16px', left: '24px'}}>
 										  <Link href={member.tg} justifyItems={'center'} color={ourColor.lightest}>
 											  <Telegram />
 										  </Link>

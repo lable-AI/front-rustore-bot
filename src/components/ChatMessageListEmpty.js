@@ -63,30 +63,24 @@ const ChatMessageListEmpty = () => {
 	  <Box
 		width={'100%'}
 		justifyContent={'center'}>
-		  <Stack spacing={2} direction={'row'} alignItems={'center'} sx={{paddingRight: '40px'}}>
+		  <Stack spacing={2} direction={'row'} alignItems={'start'} sx={{paddingRight: '40px'}}>
 			  {/*<Grid item xs={2} sm={4} md={4} >*/}
-				{/*  <QuickRequestCard request={"Как установить какашку"} icon={<AcUnit fontSize="small" sx={{opacity: '1', color: '#5A639C'}} />} />*/}
+			  {/*  <QuickRequestCard request={"Как установить какашку"} icon={<AcUnit fontSize="small" sx={{opacity: '1', color: '#5A639C'}} />} />*/}
 			  {/*</Grid>*/}
 			  {/*<Grid item xs={2} sm={4} md={4} >*/}
-				{/*  <QuickRequestCard request={"Как установить какашку"} icon={<AcUnit fontSize="small" sx={{opacity: '1', color: '#7776B3'}} />} />*/}
+			  {/*  <QuickRequestCard request={"Как установить какашку"} icon={<AcUnit fontSize="small" sx={{opacity: '1', color: '#7776B3'}} />} />*/}
 			  {/*</Grid>*/}
 			  {/*<Grid item xs={2} sm={4} md={4} >*/}
-				{/*  <QuickRequestCard request={"Как установить какашку"} icon={<AcUnit fontSize="small" sx={{opacity: '1', color: '#9B86BD'}} />} />*/}
+			  {/*  <QuickRequestCard request={"Как установить какашку"} icon={<AcUnit fontSize="small" sx={{opacity: '1', color: '#9B86BD'}} />} />*/}
 			  {/*</Grid>*/}
 			  {/*<Grid item xs={2} sm={4} md={4}>*/}
-				{/*  <QuickRequestCard request={"Как установить какашку"} icon={<AcUnit fontSize="small" sx={{opacity: '1', color: '#E2BBE9'}} />} />*/}
+			  {/*  <QuickRequestCard request={"Как установить какашку"} icon={<AcUnit fontSize="small" sx={{opacity: '1', color: '#E2BBE9'}} />} />*/}
 			  {/*</Grid>*/}
 
 			  {
 				  popularRequests.map((pop, index) => <QuickRequestCard {...pop} onClick={pasteQuickAnswer} key={index}  />)
 			  }
 		  </Stack>
-		  <Typography
-			align={'center'}
-			color={grey[500]}
-			variant={'body2'}>
-			  История поиска
-		  </Typography>
 	  </Box>
 	);
 };

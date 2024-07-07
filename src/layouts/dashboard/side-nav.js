@@ -1,7 +1,7 @@
 import { usePathname } from 'next/navigation';
 import PropTypes from 'prop-types';
 import {
-	Box, Button, Divider, Drawer, Link, Stack, SvgIcon, Typography, useMediaQuery
+	Box, Button, Divider, Drawer, Link, ListItem, Stack, SvgIcon, Typography, useMediaQuery
 } from '@mui/material';
 import { Scrollbar } from 'src/components/scrollbar';
 import { items } from './config';
@@ -9,6 +9,7 @@ import { SideNavItem } from './side-nav-item';
 import { grey } from '@mui/material/colors';
 import { alpha } from '@mui/material/styles';
 import { ourColor } from '../../theme/colors';
+import { Handyman } from '@mui/icons-material';
 
 const SIDE_TOP_HEIGHT = 64;
 
@@ -38,26 +39,35 @@ export const SideNav = (props) => {
 		  sx={{
 			  flexGrow: 1, px: 2, py: 3
 		  }}>
-			<Stack
-			  component="ul"
-			  spacing={0.5}
-			  sx={{
-				  listStyle: 'none', p: 0, m: 0
-			  }}>
-				{items.map((item) => {
-					const active = item.path ? (pathname === item.path) : false;
+			<Stack spacing={'auto'} height={'100%'}>
+				<Stack
+				  component="ul"
+				  spacing={0.5}
+				  sx={{
+					  listStyle: 'none', p: 0, m: 0
+				  }}>
+					{items.map((item) => {
+						const active = item.path ? (pathname === item.path) : false;
 
-					return (<SideNavItem
-					  active={active}
-					  disabled={item.disabled}
-					  external={item.external}
-					  icon={item.icon}
-					  key={item.title}
-					  path={item.path}
-					  title={item.title}
-					/>);
-				})}
+						return (<SideNavItem
+						  active={active}
+						  disabled={item.disabled}
+						  external={item.external}
+						  icon={item.icon}
+						  key={item.title}
+						  path={item.path}
+						  title={item.title}
+						/>);
+					})}
+				</Stack>
+				<Link href={'/'} sx={{textDecoration: 'none', cursor: 'pointer'}}>
+					<Stack direction={'row'} spacing={1}>
+						<Handyman sx={{opacity: '0.6'}} fontSize={'small'}/>
+						<Typography variant={'subtitle2'}>Режим отладки</Typography>
+					</Stack>
+				</Link>
 			</Stack>
+
 		</Box>
 	</Box>);
 

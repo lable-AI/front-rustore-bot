@@ -21,7 +21,7 @@ const LayoutContainer = styled('div')({
 	flex: '1 1 auto',
 	flexDirection: 'column',
 	width: '100%',
-	padding: "24px 0",
+	padding: "32px 8px",
 });
 
 export const Layout = (props) => {
