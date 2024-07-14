@@ -34,14 +34,19 @@ export const SideNavItem = (props) => {
 					pr: '16px',
 					py: '6px',
 					transition: '0.1s',
+					border: '1px solid transparent',
 					textAlign: 'left',
 					width: '100%',
 					...(active && {
-						backgroundColor: alpha(ourColor.main, 0.1)
+						backgroundColor: alpha('rgb(255,255,255)', 0.25),
+						borderColor: alpha('rgb(0,0,0)', 0.1),
+						boxShadow: '0px 0px 24px rgba(0,0,0,0.05)',
+						cursor: 'default',
 					}),
-					'&:hover': {
-						backgroundColor: alpha(ourColor.main, 0.05)
-					}
+					...(!active && {'&:hover': {
+						backgroundColor: alpha(ourColor.main, 0.05),
+						borderColor: 'rgba(0,0,0,0.1)'
+					}})
 				}}
 				{...linkProps}
 			>
@@ -55,7 +60,7 @@ export const SideNavItem = (props) => {
 							justifyContent: 'center',
 							mr: 2,
 							...(active && {
-								color: alpha(ourColor.main, 1)
+								color: alpha(ourColor.light, 1)
 							})
 						}}
 					>
@@ -73,7 +78,7 @@ export const SideNavItem = (props) => {
 						lineHeight: '24px',
 						whiteSpace: 'nowrap',
 						...(active && {
-							color: alpha(ourColor.main, 1)
+							color: alpha(grey[800], 1)
 						}),
 						...(disabled && {
 							color: alpha(grey[300], 1)

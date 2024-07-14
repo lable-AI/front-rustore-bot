@@ -1,7 +1,17 @@
 import { usePathname } from 'next/navigation';
 import PropTypes from 'prop-types';
 import {
-	Box, Button, Divider, Drawer, Link, ListItem, Stack, SvgIcon, Typography, useMediaQuery
+	Box,
+	Button,
+	Divider,
+	Drawer,
+	keyframes,
+	Link,
+	ListItem,
+	Stack,
+	SvgIcon,
+	Typography,
+	useMediaQuery
 } from '@mui/material';
 import { Scrollbar } from 'src/components/scrollbar';
 import { items } from './config';
@@ -12,6 +22,12 @@ import { ourColor } from '../../theme/colors';
 import { Handyman } from '@mui/icons-material';
 
 const SIDE_TOP_HEIGHT = 64;
+const GRADIENT = 'linear-gradient(0deg,'
+  + ' rgba(23, 21, 59,0.2) 0%,'
+  + ' rgba(119,118,179,0.2) 35%,'
+  + ' rgba(155,134,189,0.2) 65%,'
+  + ' rgba(238, 206, 185,0.2) 100%)';
+
 
 export const SideNav = (props) => {
 	const pathname = usePathname();
@@ -21,28 +37,32 @@ export const SideNav = (props) => {
 	  sx={{
 		  display: 'flex', flexDirection: 'column', height: '100%'
 	  }}>
-		<Box sx={{ p: 2, height: SIDE_TOP_HEIGHT }}>
-			<Box>
-				{/* <Logo /> */}
+		<Stack sx={{ py:2,px:2, height: SIDE_TOP_HEIGHT }} justifyContent='center'>
+			<Stack direction="row" spacing={2} alignItems="center">
+				<Box sx={{
+					height: '18px',
+					width: '18px',
+					background: ourColor.light,
+					borderRadius: '4px',
+				}}/>
 				<Typography variant="h6"
 							component="h6"
-							align={'center'}>
+							>
 					<Link href="/about-us"
 						  style={{ textDecoration: 'none', color: grey[900] }}>Label AI</Link>
 				</Typography>
-			</Box>
+			</Stack>
 
-		</Box>
-		<Divider/>
+		</Stack>
 		<Box
 		  component="nav"
 		  sx={{
-			  flexGrow: 1, px: 2, py: 3
+			  flexGrow: 1, px: 2, py:2
 		  }}>
 			<Stack spacing={'auto'} height={'100%'}>
 				<Stack
 				  component="ul"
-				  spacing={0.5}
+				  spacing={1}
 				  sx={{
 					  listStyle: 'none', p: 0, m: 0
 				  }}>
@@ -77,7 +97,7 @@ export const SideNav = (props) => {
 	  PaperProps={{
 		  sx: {
 			  backgroundColor: 'neutral.200', color: 'common.white', width: 280,
-			  background: '#f6eff9'
+			  background: GRADIENT
 		  }
 	  }}
 	  variant={'permanent'}>

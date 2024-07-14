@@ -6,7 +6,7 @@ import {
 	IconButton,
 	Stack,
 	SvgIcon,
-	Tooltip,
+	Tooltip, Typography,
 	useMediaQuery
 } from '@mui/material';
 import { grey } from '@mui/material/colors';
@@ -32,6 +32,7 @@ export const TopNav = (props) => {
 					},
 					borderBottom: '1px solid',
 					borderColor: grey['300'],
+					py: 1,
 					zIndex: (theme) => theme.zIndex.appBar
 				}}>
 				<Stack
@@ -41,13 +42,21 @@ export const TopNav = (props) => {
 					spacing={2}
 					sx={{
 						minHeight: TOP_NAV_HEIGHT,
-						px: 2
+						px: 6
 					}}>
 					<Stack
 						alignItems="center"
 						direction="row"
-						spacing={2}
-					>
+						spacing={2}>
+						<Stack sx={{opacity: '0.5',transition: '0.25s',cursor: 'help',userSelect: 'none', "&:hover": {opacity: '1'}}}>
+							<Typography variant="caption" sx={{opacity: '0.5'}}>
+								Цитатник
+							</Typography>
+							<Typography variant="subtitle1">
+								Талант выигрывает игры, но команда Label AI выигрывает хакатоны
+							</Typography>
+						</Stack>
+
 					</Stack>
 					<Stack
 						alignItems="center"

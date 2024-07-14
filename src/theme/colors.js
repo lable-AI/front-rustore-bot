@@ -13,7 +13,7 @@ const withAlphas = (color) => {
 };
 
 export const ourColor = {
-	lightest: '#E2BBE9', light: '#9B86BD', main: '#7776B3', dark: '#5A639C'
+	lightest: '#dfcde3', light: '#9B86BD', main: '#7776B3', dark: '#5A639C'
 };
 
 export const system ={
