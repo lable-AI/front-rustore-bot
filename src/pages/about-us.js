@@ -18,16 +18,7 @@ import { styled } from '@mui/system';
 import { mentors, solutions, teamMembers } from '../other/data';
 import { Accessibility, Accessible, AcUnit, Blind, Telegram } from '@mui/icons-material';
 import { ourColor } from '../theme/colors';
-
-
-const StyledCard = styled(Card)(({ theme }) => ({
-	height: 400, display: 'flex', flexDirection: 'column'
-}));
-
-const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
-	height: 200, width: '100%',
-	objectPosition: '0 250px'
-}));
+import TeamItem from '../components/TeamItem';
 
 const StyledSlider = styled(Slider)(({ theme }) => ({
 	'.slick-slide': {
@@ -61,7 +52,7 @@ const Page = () => {
 						<Stack spacing={3}>
 							<Stack spacing={1} direction="row" alignItems={'center'}>
 								<div style={{
-									borderRadius: '12px',
+									borderRadius: '16px',
 									padding: '48px',
 									width: '100%',
 									display: 'flex',
@@ -127,42 +118,11 @@ const Page = () => {
 
 								</div>
 							</Stack>
-							<StyledSlider {...settings}
-										  slidesToShow={3}>
-								{teamMembers.map((member, index) => (<StyledCard key={index}>
-									  <StyledCardMedia
-										image={member.image}
-										title={member.name}
-									  />
-									  <CardContent sx={{ flexGrow: 1 }}>
-										  <Stack spacing={2}>
-											  <Stack spacing={2}>
-												  <Stack>
-													  <Typography variant="h5"
-																  component="h2">
-														  {member.name}
-													  </Typography>
-													  <Typography variant="subtitle1"
-																  color="textSecondary">
-														  {member.role}
-													  </Typography>
-												  </Stack>
-												  <Typography variant="body2"
-															  component="p">
-													  {member.description}
-												  </Typography>
-												  <Stack sx={{position: 'absolute', bottom: '16px', left: '24px'}}>
-													  <Link href={member.tg} justifyItems={'center'} color={ourColor.lightest}>
-														  <Telegram />
-													  </Link>
-												  </Stack>
-											  </Stack>
-										  </Stack>
-									  </CardContent>
-								  </StyledCard>
-
+							<Stack direction={'row'} alignItems={'center'} spacing={3}>
+								{teamMembers.map((member, index) => (
+								  <TeamItem key={index} {...member} />
 								))}
-							</StyledSlider>
+							</Stack>
 						</Stack>
 
 					</Grid>

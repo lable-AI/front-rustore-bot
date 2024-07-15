@@ -45,28 +45,18 @@ export function createComponents(config) {
 		MuiCard: {
 			styleOverrides: {
 				root: {
-					borderRadius: 16, [`&.${paperClasses.elevation1}`]: {
-						//boxShadow: '0px 5px 22px rgba(0, 0, 0, 0.04), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.03)'
-					},
-					position: 'relative',
-					height: '550px !important',
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+					boxShadow: 'none',
 				}
 			}
 		}, MuiCardContent: {
 			styleOverrides: {
 				root: {
-					padding: '24px 24px',
-					'&:last-child': {
-						paddingBottom: '24px'
-					},
-					position: 'absolute',
-					bottom: 0,
-					left: 0,
-					right: 0,
-					height: '40% !important',
-					zIndex: 2,
-					background: alpha('#f9f2fb', 1),
-					backdropFilter: 'blur(10px)'
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
 				}
 			}
 		}, MuiCardHeader: {
@@ -78,21 +68,8 @@ export function createComponents(config) {
 				}
 			}, styleOverrides: {
 				root: {
-					padding: '32px 24px 16px'
+
 				}
-			}
-		},
-		MuiCardMedia:{
-			styleOverrides: {
-				root: {
-					position: 'absolute',
-					top: 0,
-					bottom: 0,
-					left: 0,
-					right: 0,
-					height: 'auto !important',
-					zIndex: 1,
-				},
 			}
 		},
 	MuiCssBaseline: {

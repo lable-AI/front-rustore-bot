@@ -23,10 +23,10 @@ import { Handyman } from '@mui/icons-material';
 
 const SIDE_TOP_HEIGHT = 64;
 const GRADIENT = 'linear-gradient(0deg,'
-  + ' rgba(23, 21, 59,0.2) 0%,'
+  + ' rgba(123, 140, 235,0.1) 0%,'
   + ' rgba(119,118,179,0.2) 35%,'
   + ' rgba(155,134,189,0.2) 65%,'
-  + ' rgba(238, 206, 185,0.2) 100%)';
+  + ' rgba(239, 202, 204,0.2) 100%)';
 
 
 export const SideNav = (props) => {
@@ -96,7 +96,7 @@ export const SideNav = (props) => {
 	  open
 	  PaperProps={{
 		  sx: {
-			  backgroundColor: 'neutral.200', color: 'common.white', width: 280,
+			  color: 'common.white', width: 280,
 			  background: GRADIENT
 		  }
 	  }}
