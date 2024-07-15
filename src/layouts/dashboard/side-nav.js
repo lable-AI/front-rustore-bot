@@ -24,9 +24,9 @@ import { Handyman } from '@mui/icons-material';
 const SIDE_TOP_HEIGHT = 64;
 const GRADIENT = 'linear-gradient(0deg,'
   + ' rgba(123, 140, 235,0.1) 0%,'
-  + ' rgba(119,118,179,0.2) 35%,'
-  + ' rgba(155,134,189,0.2) 65%,'
-  + ' rgba(239, 202, 204,0.2) 100%)';
+  + ' rgba(119,118,179,0.1) 35%,'
+  + ' rgba(155,134,189,0.1) 65%,'
+  + ' rgba(239, 202, 204,0.1) 100%)';
 
 
 export const SideNav = (props) => {

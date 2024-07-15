@@ -19,6 +19,7 @@ import { mentors, solutions, teamMembers } from '../other/data';
 import { Accessibility, Accessible, AcUnit, Blind, Telegram } from '@mui/icons-material';
 import { ourColor } from '../theme/colors';
 import TeamItem from '../components/TeamItem';
+import MentorItem from '../components/MentorItem';
 
 const StyledSlider = styled(Slider)(({ theme }) => ({
 	'.slick-slide': {
@@ -45,11 +46,10 @@ const Page = () => {
 
 	return (<Container component={'main'} sx={{paddingBottom: '32px'}}>
 		<Stack spacing={2}>
-
 			<Stack spacing={3}>
-				<Grid container spacing={4}>
+				<Grid container spacing={6}>
 					<Grid item xs={8}>
-						<Stack spacing={3}>
+						<Stack spacing={6}>
 							<Stack spacing={1} direction="row" alignItems={'center'}>
 								<div style={{
 									borderRadius: '16px',
@@ -60,61 +60,9 @@ const Page = () => {
 									justifyContent: 'center',
 									background: GRADIENT,
 								}}>
-									<Stack width={'100%'} direction='row' alignItems={'center'} spacing={'6'} justifyContent={'space-between'}>
-										<Stack spacing={2} >
-											<AcUnit fontSize={'large'} sx={{color: ourColor.light}}/>
-											<Stack spacing={1}>
-												<Typography variant={'h3'}
-															sx={{
-																whiteSpace: 'nowrap'
-															}}>Label AI</Typography>
-												<Typography variant={'subtitle2'}
-															sx={{
-																opacity: '1'
-															}}>Наша команда</Typography>
-											</Stack>
-											<Typography variant={'body2'}
-														sx={{
-															opacity: '1'
-														}}>Мы ребята дружные</Typography>
-										</Stack>
-										<Stack spacing={2} >
-											<Blind fontSize={'large'} sx={{color: ourColor.light}}/>
-											<Stack spacing={1}>
-												<Typography variant={'h3'}
-															sx={{
-																whiteSpace: 'nowrap'
-															}}>12/24</Typography>
-												<Typography variant={'subtitle2'}
-															sx={{
-																opacity: '1'
-															}}>Блабла бла бла</Typography>
-											</Stack>
-											<Typography variant={'body2'}
-														sx={{
-															opacity: '1'
-														}}>и еще что то</Typography>
-										</Stack>
-										<Stack spacing={2}>
-											<Accessible fontSize={'large'} sx={{color: ourColor.light}}/>
-											<Stack spacing={1}>
-												<Typography variant={'h3'}
-															sx={{
-																whiteSpace: 'nowrap'
-															}}>5</Typography>
-												<Typography variant={'subtitle2'}
-															sx={{
-																opacity: '1'
-															}}>Хакатонов унижено</Typography>
-											</Stack>
-											<Typography variant={'body2'}
-														sx={{
-															opacity: '1'
-														}}>За 2 года</Typography>
-										</Stack>
-
-									</Stack>
-
+									<Typography variant={'h3'}>
+										Label AI
+									</Typography>
 
 								</div>
 							</Stack>
@@ -123,12 +71,23 @@ const Page = () => {
 								  <TeamItem key={index} {...member} />
 								))}
 							</Stack>
+							<Stack spacing={4} alignItems={'center'}>
+								<Typography variant={'h5'}>
+									Наши менторы
+								</Typography>
+								<Divider width={'100%'} />
+								<Stack direction={'row'} spacing={3} width={'min-content'}>
+									{mentors.map((mentor, index) => (
+									  <MentorItem key={index} {...mentor} />
+									))}
+								</Stack>
+							</Stack>
 						</Stack>
 
 					</Grid>
 					<Grid item xs>
 						<Typography variant={'h5'}>
-							Мы молодая команда студентов
+							Команда Label AI
 						</Typography>
 						<Typography variant="body1"
 									paragraph
@@ -137,15 +96,9 @@ const Page = () => {
 										paddingTop: '8px',
 										opacity: '0.5'
 									}}>
-							занимающаяся разработкой в области машинного
-							обучения. Наша цель - создавать передовые
-							технологии и решения для различных отраслей. Мы стремимся к непрерывному
-							развитию и всегда открыты для новых идей и
-							возможностей.
+							 — профессиональный коллектив студентов, специализирующихся на разработке и исследованиях в области обработки естественного языка (NLP). Мы занимаемся созданием и внедрением передовых технологий, направленных на улучшение взаимодействия человека с компьютером через естественный язык.Наши опытные наставники, помогают нам достигать высоких результатов.
 						</Typography>
 					</Grid>
-
-
 				</Grid>
 
 

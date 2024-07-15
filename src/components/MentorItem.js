@@ -24,7 +24,7 @@ const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
 }));
 
 
-function TeamItem({image, name, description, role, tg}) {
+function MentorItem({image, name, description, role}) {
 	return (
 	  <StyledCard>
 		  <StyledCardMedia
@@ -43,14 +43,6 @@ function TeamItem({image, name, description, role, tg}) {
 						  {role}
 					  </Typography>
 				  </Stack>
-				  <Stack direction='row' spacing={1}>
-					  <Link href={tg} justifyItems={'center'} color={ourColor.lightest}>
-						  <Telegram fontSize={'small'} />
-					  </Link>
-					  <Link href={tg} justifyItems={'center'} color={ourColor.lightest}>
-						  <Instagram fontSize={'small'}  />
-					  </Link>
-				  </Stack>
 			  </Stack>
 
 		  </CardContent>
@@ -58,4 +50,4 @@ function TeamItem({image, name, description, role, tg}) {
 	)
 }
 
-export default TeamItem;
+export default MentorItem;

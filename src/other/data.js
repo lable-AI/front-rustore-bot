@@ -36,7 +36,7 @@ export const mentors = [
 		name: 'Мария Сидорова',
 		role: 'Tech Lead',
 		description: 'Мария помогает нам в разработке и масштабировании наших приложений.',
-		image: 'https://via.placeholder.com/150'
+		image: 'https://pro.guap.ru/avatars/0/453.jpg'
 	}
 ];
 
