@@ -28,6 +28,9 @@ export function createPalette() {
 			secondary: grey[500],
 			disabled: alpha(grey[900], 0.38)
 		},
-		warning
+		warning,
+		gradient: 'linear-gradient(0deg,'
+		  + ' rgba(119,118,179,0.1) 0%,'
+		  + ' rgba(155,134,189,0.1) 100%)',
 	};
 }

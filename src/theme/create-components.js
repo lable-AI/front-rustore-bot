@@ -6,57 +6,24 @@ import {
 	paperClasses,
 	tableCellClasses
 } from '@mui/material';
-import { grey } from '@mui/material/colors';
-import * as theme from '@mui/system';
-import { alpha } from '@mui/material/styles';
-import { ourColor } from './colors';
+
 
 // Used only to create transitions
 const muiTheme = createTheme();
 
+
 export function createComponents(config) {
 	const { palette, borderRadius } = config;
-	return {
-		MuiButtonBase:{
-			styleOverrides:{
-				root:{
-					borderRadius
-				}
-			}
-		},
-		MuiAvatar: {
-			styleOverrides: {
-				root: {
-					fontSize: 14, fontWeight: 600, letterSpacing: 0
-				}
-			}
-		}, MuiButton: {
-			styleOverrides: {
-				root: {
-					borderRadius,
-					textTransform: 'none'
-				}, sizeSmall: {
-					padding: '6px 16px'
-				}, sizeMedium: {
-					padding: '8px 20px'
-				}, sizeLarge: {
-					padding: '11px 24px'
-				}, textSizeSmall: {
-					padding: '7px 12px'
-				}, textSizeMedium: {
-					padding: '9px 16px'
-				}, textSizeLarge: {
-					padding: '12px 16px'
-				}
-			}
-		},
+
+
+	const MuiPersonCard = {
 		MuiCard: {
 			styleOverrides: {
 				root: {
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
-					boxShadow: 'none',
+					boxShadow: 'none'
 				}
 			}
 		}, MuiCardContent: {
@@ -64,7 +31,7 @@ export function createComponents(config) {
 				root: {
 					display: 'flex',
 					flexDirection: 'column',
-					alignItems: 'center',
+					alignItems: 'center'
 				}
 			}
 		}, MuiCardHeader: {
@@ -75,47 +42,13 @@ export function createComponents(config) {
 					variant: 'body2'
 				}
 			}, styleOverrides: {
-				root: {
+				root: {}
+			}
+		}
+	};
 
-				}
-			}
-		},
-	MuiCssBaseline: {
-			styleOverrides: {
-				'*': {
-					boxSizing: 'border-box'
-				}, html: {
-					MozOsxFontSmoothing: 'grayscale',
-					WebkitFontSmoothing: 'antialiased',
-					display: 'flex',
-					flexDirection: 'column',
-					minHeight: '100%',
-					width: '100%'
-				}, body: {
-					display: 'flex',
-					flex: '1 1 auto',
-					flexDirection: 'column',
-					minHeight: '100%',
-					width: '100%'
-				}, '#__next': {
-					display: 'flex',
-					flex: '1 1 auto',
-					flexDirection: 'column',
-					height: '100%',
-					width: '100%'
-				}, '#nprogress': {
-					pointerEvents: 'none'
-				}, '#nprogress .bar': {
-					backgroundColor: palette.primary.main,
-					height: 3,
-					left: 0,
-					position: 'fixed',
-					top: 0,
-					width: '100%',
-					zIndex: 2000
-				}
-			}
-		}, MuiInputBase: {
+	const MuiInput = {
+		MuiInputBase: {
 			styleOverrides: {
 				input: {
 					'&::placeholder': {
@@ -132,7 +65,7 @@ export function createComponents(config) {
 				}
 			}
 		},
-	  MuiFilledInput: {
+		MuiFilledInput: {
 			styleOverrides: {
 				root: {
 					backgroundColor: 'transparent',
@@ -170,7 +103,7 @@ export function createComponents(config) {
 				}
 			}
 		},
-	  MuiOutlinedInput: {
+		MuiOutlinedInput: {
 			styleOverrides: {
 				root: {
 					'&:hover': {
@@ -199,24 +132,98 @@ export function createComponents(config) {
 				}
 			}
 		},
-	MuiFormLabel: {
-		styleOverrides: {
-			root: {
-				fontSize: 14, fontWeight: 500, [`&.${inputLabelClasses.filled}`]: {
-					transform: 'translate(12px, 18px) scale(1)'
-				}, [`&.${inputLabelClasses.shrink}`]: {
-					[`&.${inputLabelClasses.standard}`]: {
-						transform: 'translate(0, -1.5px) scale(0.85)'
-					}, [`&.${inputLabelClasses.filled}`]: {
-						transform: 'translate(12px, 6px) scale(0.85)'
-					}, [`&.${inputLabelClasses.outlined}`]: {
-						transform: 'translate(14px, -9px) scale(0.85)'
+		MuiTextField: {
+			defaultProps: {
+				variant: 'filled'
+			}
+		}
+	}
+
+	return {
+		...MuiPersonCard,
+		...MuiInput,
+		MuiButtonBase: {
+			styleOverrides: {
+				root: {
+					borderRadius
+				}
+			}
+		},
+		MuiButton: {
+			styleOverrides: {
+				root: {
+					borderRadius,
+					textTransform: 'none'
+				}, sizeSmall: {
+					padding: '6px 16px'
+				}, sizeMedium: {
+					padding: '8px 20px'
+				}, sizeLarge: {
+					padding: '11px 24px'
+				}, textSizeSmall: {
+					padding: '7px 12px'
+				}, textSizeMedium: {
+					padding: '9px 16px'
+				}, textSizeLarge: {
+					padding: '12px 16px'
+				}
+			}
+		},
+
+		MuiCssBaseline: {
+			styleOverrides: {
+				'*': {
+					boxSizing: 'border-box'
+				}, html: {
+					MozOsxFontSmoothing: 'grayscale',
+					WebkitFontSmoothing: 'antialiased',
+					display: 'flex',
+					flexDirection: 'column',
+					minHeight: '100%',
+					width: '100%'
+				}, body: {
+					display: 'flex',
+					flex: '1 1 auto',
+					flexDirection: 'column',
+					minHeight: '100%',
+					width: '100%'
+				}, '#__next': {
+					display: 'flex',
+					flex: '1 1 auto',
+					flexDirection: 'column',
+					height: '100%',
+					width: '100%'
+				}, '#nprogress': {
+					pointerEvents: 'none'
+				}, '#nprogress .bar': {
+					backgroundColor: palette.primary.main,
+					height: 3,
+					left: 0,
+					position: 'fixed',
+					top: 0,
+					width: '100%',
+					zIndex: 2000
+				}
+			}
+		},
+		MuiFormLabel: {
+			styleOverrides: {
+				root: {
+					fontSize: 14, fontWeight: 500, [`&.${inputLabelClasses.filled}`]: {
+						transform: 'translate(12px, 18px) scale(1)'
+					}, [`&.${inputLabelClasses.shrink}`]: {
+						[`&.${inputLabelClasses.standard}`]: {
+							transform: 'translate(0, -1.5px) scale(0.85)'
+						}, [`&.${inputLabelClasses.filled}`]: {
+							transform: 'translate(12px, 6px) scale(0.85)'
+						}, [`&.${inputLabelClasses.outlined}`]: {
+							transform: 'translate(14px, -9px) scale(0.85)'
+						}
 					}
 				}
 			}
-		}
-	},
-	 MuiTab: {
+		},
+		MuiTab: {
 			styleOverrides: {
 				root: {
 					fontSize: 14,
@@ -255,10 +262,5 @@ export function createComponents(config) {
 				}
 			}
 		},
-	  MuiTextField: {
-			defaultProps: {
-				variant: 'filled'
-			}
-		}
-	}
+	};
 }

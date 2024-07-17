@@ -1,6 +1,6 @@
 import { Stack, styled } from '@mui/system';
 import { Card, CardContent, CardMedia, Link, Typography } from '@mui/material';
-import { ourColor } from '../theme/colors';
+import { ourColor } from '../../../theme/colors';
 import { Facebook, Instagram, Telegram } from '@mui/icons-material';
 import React from 'react';
 
@@ -24,7 +24,7 @@ const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
 }));
 
 
-function MentorItem({image, name, description, role}) {
+function PersonCard({image, name, description, role, tg, inst}) {
 	return (
 	  <StyledCard>
 		  <StyledCardMedia
@@ -43,6 +43,23 @@ function MentorItem({image, name, description, role}) {
 						  {role}
 					  </Typography>
 				  </Stack>
+				  <Stack direction='row' spacing={1}>
+					  {
+						  tg && (
+							  <Link href={tg} justifyItems={'center'} color={ourColor.lightest}>
+								  <Telegram fontSize={'small'} />
+							  </Link>
+						  )
+					  }
+
+					  {
+						  inst && (
+							  <Link href={tg} justifyItems={'center'} color={ourColor.lightest}>
+								  <Instagram fontSize={'small'}  />
+							  </Link>
+						  )
+					  }
+				  </Stack>
 			  </Stack>
 
 		  </CardContent>
@@ -50,4 +67,4 @@ function MentorItem({image, name, description, role}) {
 	)
 }
 
-export default MentorItem;
+export default PersonCard;
