@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Stack, styled, useTheme } from '@mui/system';
 import { Box, CircularProgress, Divider, Link, Paper, Typography } from '@mui/material';
-import { system } from '../theme/colors';
+import { system } from '../../theme/colors';
 import ChatAnswerItem from './ChatAnswerItem';
 import axios from 'axios';
 import { useQuery } from 'react-query';

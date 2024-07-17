@@ -13,7 +13,7 @@ import {
 	Typography,
 	useMediaQuery
 } from '@mui/material';
-import { items } from '../../layouts/dashboard/config';
+import { items } from '../../other/routes';
 import { Handyman } from '@mui/icons-material';
 import { SideNavItem } from './item/SideNavItem';
 import { Logo } from './logo/Logo';

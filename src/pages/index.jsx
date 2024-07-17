@@ -9,7 +9,7 @@ import {
 	Divider,
 	Box, Grid
 } from '@mui/material';
-import {Layout as DashboardLayout} from 'src/layouts/dashboard/layout';
+import {Layout as DashboardLayout} from 'src/layouts/layout';
 import {Stack} from '@mui/system';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';

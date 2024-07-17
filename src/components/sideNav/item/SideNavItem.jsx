@@ -2,7 +2,6 @@ import React from 'react';
 import {Box, ButtonBase, Typography} from "@mui/material";
 import {alpha} from "@mui/material/styles";
 import {ourColor} from "../../../theme/colors";
-import {grey} from "@mui/material/colors";
 import {styled} from "@mui/system";
 import NextLink from "next/link";
 
@@ -45,9 +44,6 @@ const StyledTitle = styled(Box)(({theme, active, disabled}) => ({
 
 	...(active && {
 		color: theme.palette.text.primary
-	}),
-	...(disabled  && {
-		color: theme.palette.text.secondary
 	})
 }));
 

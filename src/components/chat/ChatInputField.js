@@ -1,7 +1,7 @@
 import { Box, IconButton, TextField, Typography } from '@mui/material';
 import { Stack, styled } from '@mui/system';
 import { Send } from '@mui/icons-material';
-import { ourColor } from '../theme/colors';
+import { ourColor } from '../../theme/colors';
 import { alpha } from '@mui/material/styles';
 import { useContext, useState } from 'react';
 import { RequestContext } from '../pages/chat';

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
-import { SideNavBar } from '../../components/sideNav/SideNavBar';
-import { TopNavBar } from '../../components/topNav/TopNavBar';
+import { SideNavBar } from '../components/sideNav/SideNavBar';
+import { TopNavBar } from '../components/topNav/TopNavBar';
 import { usePathname } from 'next/navigation';
 import { Box } from '@mui/material';
 

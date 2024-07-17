@@ -1,5 +1,5 @@
 import {Container} from "@mui/material";
-import {Layout as DashboardLayout} from "../layouts/dashboard/layout";
+import {Layout as DashboardLayout} from "../layouts/layout";
 
 const Page = () => (
 	<Container sx={{
