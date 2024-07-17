@@ -6,9 +6,10 @@ import { createTypography } from './create-typography';
 
 export function createTheme() {
 	const borderRadius = 8;
+	const transition = '0.2s';
 
 	const palette = createPalette();
-	const components = createComponents({ palette, borderRadius });
+	const components = createComponents({ palette, borderRadius, transition });
 	const shadows = createShadows();
 	const typography = createTypography();
 

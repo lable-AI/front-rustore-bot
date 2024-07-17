@@ -23,7 +23,7 @@ export function createPalette() {
 		primary: grey,
 		success,
 		text: {
-			accent: ourColor.main,
+			accent: ourColor.light,
 			primary: grey[900],
 			secondary: grey[500],
 			disabled: alpha(grey[900], 0.38)

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, ButtonBase} from "@mui/material";
+import {Box, ButtonBase, Typography} from "@mui/material";
 import {alpha} from "@mui/material/styles";
 import {ourColor} from "../../../theme/colors";
 import {grey} from "@mui/material/colors";
@@ -11,49 +11,43 @@ const StyledSideTab = styled(ButtonBase)(({theme, active}) => ({
 	display: 'flex',
 	justifyContent: 'flex-start',
 	padding: '6px 16px',
-	transition: '0.15s',
 	border: '1px solid transparent',
 	textAlign: 'left',
 	width: '100%',
 	...(active && {
 		backgroundColor: alpha('rgb(255,255,255)', 0.25),
-		borderColor: alpha('rgb(0,0,0)', 0.1),
+		borderColor: theme.palette.divider,
 		boxShadow: '0px 4px 40px rgba(0,0,0,0.07)',
-		transform: 'translateY(-2px)',
+		transform: 'translateY(-1px)',
 		cursor: 'default',
 	}),
 	...(!active && {
 		'&:hover': {
 			backgroundColor: alpha(ourColor.main, 0.05),
-			borderColor: 'rgba(0,0,0,0.1)'
+			borderColor: theme.palette.divider
 		}
 	})
 }));
 
 const StyledIcon = styled(Box)(({theme, active}) => ({
 	alignItems: 'center',
-	color: grey[500],
+	color: theme.palette.text.secondary,
 	display: 'inline-flex',
 	justifyContent: 'center',
 	marginRight: '8px', // Changed to marginRight for better understanding
 	...(active && {
-		color: alpha(ourColor.light, 1)
+		color: theme.palette.text.accent
 	})
 }));
 
 const StyledTitle = styled(Box)(({theme, active, disabled}) => ({
-	color: grey[500],
-	flexGrow: 1,
-	fontFamily: theme.typography.fontFamily,
-	fontSize: 14,
-	fontWeight: 600,
-	lineHeight: '24px',
-	whiteSpace: 'nowrap',
+	color: theme.palette.text.secondary,
+
 	...(active && {
-		color: alpha(grey[800], 1)
+		color: theme.palette.text.primary
 	}),
-	...(disabled && {
-		color: alpha(grey[300], 1)
+	...(disabled  && {
+		color: theme.palette.text.secondary
 	})
 }));
 
@@ -75,7 +69,9 @@ export const SideNavItem = ({active = false, disabled, external, icon, path, tit
 		<li>
 			<StyledSideTab active={active} {...linkProps}>
 				{icon && <StyledIcon active={active}>{icon}</StyledIcon>}
-				<StyledTitle active={active} disabled={disabled}>{title}</StyledTitle>
+				<StyledTitle active={active} disabled={disabled}>
+					<Typography variant="tab">{title}</Typography>
+				</StyledTitle>
 			</StyledSideTab>
 		</li>
 	);

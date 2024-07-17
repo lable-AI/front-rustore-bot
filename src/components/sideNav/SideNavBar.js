@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 import { items } from '../../layouts/dashboard/config';
 import { Handyman } from '@mui/icons-material';
-import { SideNavItem } from './sideNavItem/SideNavItem';
+import { SideNavItem } from './item/SideNavItem';
 import { Logo } from './logo/Logo';
 import { styled } from '@mui/system';
 

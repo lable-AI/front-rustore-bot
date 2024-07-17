@@ -13,8 +13,7 @@ const muiTheme = createTheme();
 
 
 export function createComponents(config) {
-	const { palette, borderRadius } = config;
-
+	const { palette, borderRadius, transition } = config;
 
 	const MuiPersonCard = {
 		MuiCard: {
@@ -142,10 +141,25 @@ export function createComponents(config) {
 	return {
 		...MuiPersonCard,
 		...MuiInput,
+		MuiBox:{
+			styleOverrides: {
+				root:{
+					transition,
+				}
+			}
+		},
+		MuiTypography:{
+			styleOverrides: {
+				root: {
+					transition
+				}
+			}
+		},
 		MuiButtonBase: {
 			styleOverrides: {
 				root: {
-					borderRadius
+					borderRadius,
+					transition
 				}
 			}
 		},
@@ -153,7 +167,7 @@ export function createComponents(config) {
 			styleOverrides: {
 				root: {
 					borderRadius,
-					textTransform: 'none'
+					transition,
 				}, sizeSmall: {
 					padding: '6px 16px'
 				}, sizeMedium: {

@@ -16,6 +16,11 @@ export const createTypography = () => {
 		button: {
 			fontWeight: 600
 		},
+		tab: {
+			fontWeight: 700,
+			fontSize: '14px',
+			whiteSpace: 'nowrap',
+		},
 		caption: {
 			fontSize: '0.75rem',
 			fontWeight: 500,
