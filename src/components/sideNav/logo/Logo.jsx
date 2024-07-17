@@ -14,7 +14,7 @@ export function Logo(){
 			<Typography variant="h6"
 						component="h6"
 			>
-				<Link href="/about-us"
+				<Link href="/src/pages"
 					  style={{ textDecoration: 'none', color: grey[900] }}>Label AI</Link>
 			</Typography>
 		</Stack>

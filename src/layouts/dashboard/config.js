@@ -8,20 +8,12 @@ import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
 import { SvgIcon } from '@mui/material';
 import { ChatBubbleLeftEllipsisIcon, TagIcon } from '@heroicons/react/20/solid';
+import { Handyman, Newspaper } from '@mui/icons-material';
 
 export const items = [
 	{
-		title: 'Информация о продукте',
-		path: '/',
-		icon: (
-			<SvgIcon fontSize="small">
-				<ChartBarIcon />
-			</SvgIcon>
-		)
-	},
-	{
 		title: 'О нас',
-		path: '/about-us',
+		path: '/',
 		icon: (
 			<SvgIcon fontSize="small">
 				<UserIcon />
@@ -29,12 +21,21 @@ export const items = [
 		)
 	},
 	{
-		title: 'Чат',
-		path: '/chat',
+		title: 'Статьи',
+		path: '/articles',
 		icon: (
 			<SvgIcon fontSize="small">
-				<ChatBubbleLeftEllipsisIcon />
+				<Newspaper />
 			</SvgIcon>
+		)
+	},
+	{
+		title: 'Кейсы',
+		path: '/cases',
+		icon: (
+		  <SvgIcon fontSize="small">
+			  <Handyman />
+		  </SvgIcon>
 		)
 	}
 ];

@@ -11,14 +11,15 @@ const StyledSideTab = styled(ButtonBase)(({theme, active}) => ({
 	display: 'flex',
 	justifyContent: 'flex-start',
 	padding: '6px 16px',
-	transition: '0.1s',
+	transition: '0.15s',
 	border: '1px solid transparent',
 	textAlign: 'left',
 	width: '100%',
 	...(active && {
 		backgroundColor: alpha('rgb(255,255,255)', 0.25),
 		borderColor: alpha('rgb(0,0,0)', 0.1),
-		boxShadow: '0px 0px 24px rgba(0,0,0,0.05)',
+		boxShadow: '0px 4px 40px rgba(0,0,0,0.07)',
+		transform: 'translateY(-2px)',
 		cursor: 'default',
 	}),
 	...(!active && {

@@ -13,10 +13,10 @@ import {
 	Typography,
 	useMediaQuery
 } from '@mui/material';
-import { items } from './config';
+import { items } from '../../layouts/dashboard/config';
 import { Handyman } from '@mui/icons-material';
-import { SideNavItem } from '../../components/sideNav/sideNavItem/SideNavItem';
-import { Logo } from '../../components/sideNav/logo/Logo';
+import { SideNavItem } from './sideNavItem/SideNavItem';
+import { Logo } from './logo/Logo';
 import { styled } from '@mui/system';
 
 const GRADIENT = 'linear-gradient(0deg,'
@@ -29,7 +29,7 @@ const StyledNav = styled(Stack)(({ theme }) => ({
 	listStyle: 'none', padding: 0, margin: 0
 }))
 
-export const SideNav = (props) => {
+export const SideNavBar = (props) => {
 	const pathname = usePathname();
 
 	const content = (

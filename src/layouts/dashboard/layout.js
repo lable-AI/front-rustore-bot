@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
-import { SideNav } from './side-nav';
+import { SideNavBar } from '../../components/sideNav/SideNavBar';
 import { TopNav } from './top-nav';
 import { usePathname } from 'next/navigation';
 import { Box } from '@mui/material';
@@ -41,7 +41,7 @@ export const Layout = (props) => {
 	return (
 	  <>
 		  <TopNav onNavOpen={() => setOpenNav(true)} />
-		  <SideNav
+		  <SideNavBar
 			onClose={() => setOpenNav(false)}
 			open={openNav}
 		  />
