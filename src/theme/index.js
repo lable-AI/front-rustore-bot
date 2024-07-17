@@ -5,27 +5,17 @@ import { createShadows } from './create-shadows';
 import { createTypography } from './create-typography';
 
 export function createTheme() {
+	const borderRadius = 8;
+
 	const palette = createPalette();
-	const components = createComponents({ palette });
+	const components = createComponents({ palette, borderRadius });
 	const shadows = createShadows();
 	const typography = createTypography();
 
 	return createMuiTheme({
-		breakpoints: {
-			values: {
-				xs: 0,
-				sm: 600,
-				md: 900,
-				lg: 1200,
-				xl: 1440
-			}
-		},
 		components,
 		palette,
 		shadows,
-		typography,
-		shape:{
-			borderRadius: 8
-		}
+		typography
 	});
 }

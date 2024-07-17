@@ -15,8 +15,15 @@ import { ourColor } from './colors';
 const muiTheme = createTheme();
 
 export function createComponents(config) {
-	const { palette } = config;
+	const { palette, borderRadius } = config;
 	return {
+		MuiButtonBase:{
+			styleOverrides:{
+				root:{
+					borderRadius
+				}
+			}
+		},
 		MuiAvatar: {
 			styleOverrides: {
 				root: {
@@ -26,7 +33,8 @@ export function createComponents(config) {
 		}, MuiButton: {
 			styleOverrides: {
 				root: {
-					borderRadius: '12px', textTransform: 'none'
+					borderRadius,
+					textTransform: 'none'
 				}, sizeSmall: {
 					padding: '6px 16px'
 				}, sizeMedium: {
@@ -128,7 +136,7 @@ export function createComponents(config) {
 			styleOverrides: {
 				root: {
 					backgroundColor: 'transparent',
-					borderRadius: 8,
+					borderRadius,
 					borderStyle: 'solid',
 					borderWidth: 1,
 					overflow: 'hidden',
