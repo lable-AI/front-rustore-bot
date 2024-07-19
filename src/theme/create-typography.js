@@ -22,7 +22,7 @@ export const createTypography = () => {
 			whiteSpace: 'nowrap',
 		},
 		caption: {
-			fontSize: '0.75rem',
+			fontSize: '0.7rem',
 			fontWeight: 500,
 			lineHeight: 1.66
 		},

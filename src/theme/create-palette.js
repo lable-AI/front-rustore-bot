@@ -23,14 +23,15 @@ export function createPalette() {
 		primary: grey,
 		success,
 		text: {
-			accent: ourColor.light,
+			accent: "#8E7AB5",
 			primary: grey[900],
-			secondary: grey[500],
+			secondary: grey[600],
 			disabled: alpha(grey[900], 0.38)
 		},
 		warning,
 		gradient: 'linear-gradient(0deg,'
-		  + ' rgba(119,118,179,0.1) 0%,'
-		  + ' rgba(155,134,189,0.1) 100%)',
+		  + ' rgb(238 240 244) 0%,'
+		  + ' rgb(231 232 246) 33%,'
+		  + ' rgb(241 225 241) 100%)',
 	};
 }

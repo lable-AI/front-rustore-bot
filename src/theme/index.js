@@ -17,6 +17,9 @@ export function createTheme() {
 		components,
 		palette,
 		shadows,
-		typography
+		typography,
+		shape:{
+			borderRadius
+		}
 	});
 }

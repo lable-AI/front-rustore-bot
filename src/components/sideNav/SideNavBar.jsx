@@ -19,11 +19,10 @@ import { SideNavItem } from './item/SideNavItem';
 import { Logo } from './logo/Logo';
 import { styled } from '@mui/system';
 
-const GRADIENT = 'linear-gradient(0deg,'
-  + ' rgba(123, 140, 235,0.1) 0%,'
-  + ' rgba(119,118,179,0.1) 35%,'
-  + ' rgba(155,134,189,0.1) 65%,'
-  + ' rgba(239, 202, 204,0.1) 100%)';
+const GRADIENT = 'linear-gradient(180deg,'
+  + ' rgba(238, 240, 244, 0.75) 0%,'
+  + ' rgba(231, 232, 246, 0.75) 33%,'
+  + ' rgba(241, 225, 241, 0.75) 100%)';
 
 const StyledNav = styled(Stack)(({ theme }) => ({
 	listStyle: 'none', padding: 0, margin: 0
@@ -71,7 +70,7 @@ export const SideNavBar = (props) => {
 	  PaperProps={{
 		  sx: {
 			  color: 'common.white', width: 280,
-			  background: GRADIENT
+			  background: GRADIENT,
 		  }
 	  }}
 	  variant={'permanent'}>
