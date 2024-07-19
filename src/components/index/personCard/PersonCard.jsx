@@ -9,6 +9,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 	flexDirection: 'column',
 	width: '100%',
 	transition: '0.15s',
+	background: 'transparent',
 	"&:hover":{
 		opacity: '0.85',
 		transform: 'translateY(2px)'
@@ -42,23 +43,6 @@ function PersonCard({image, name, description, role, tg, inst}) {
 								  sx={{whiteSpace: 'nowrap'}}>
 						  {role}
 					  </Typography>
-				  </Stack>
-				  <Stack direction='row' spacing={1}>
-					  {
-						  tg && (
-							  <Link href={tg} justifyItems={'center'} color={ourColor.lightest}>
-								  <Telegram fontSize={'small'} />
-							  </Link>
-						  )
-					  }
-
-					  {
-						  inst && (
-							  <Link href={tg} justifyItems={'center'} color={ourColor.lightest}>
-								  <Instagram fontSize={'small'}  />
-							  </Link>
-						  )
-					  }
 				  </Stack>
 			  </Stack>
 

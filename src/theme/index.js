@@ -5,7 +5,7 @@ import { createShadows } from './create-shadows';
 import { createTypography } from './create-typography';
 
 export function createTheme() {
-	const borderRadius = 8;
+	const borderRadius = 16;
 	const transition = '0.2s';
 
 	const palette = createPalette();

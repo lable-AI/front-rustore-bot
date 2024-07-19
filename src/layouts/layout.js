@@ -1,19 +1,12 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
-import { SideNavBar } from '../components/sideNav/SideNavBar';
-import { TopNavBar } from '../components/topNav/TopNavBar';
 import { usePathname } from 'next/navigation';
-import { Box } from '@mui/material';
-
-const SIDE_NAV_WIDTH = 280;
+import { InPageNav } from '../components/nav/inPageNav/inPageNav';
 
 const LayoutRoot = styled('div')(({ theme }) => ({
 	display: 'flex',
 	flex: '1 1 auto',
-	maxWidth: '100%',
-	[theme.breakpoints.up('lg')]: {
-		paddingLeft: SIDE_NAV_WIDTH
-	}
+	maxWidth: '100%'
 }));
 
 const LayoutContainer = styled('div')({
@@ -21,32 +14,19 @@ const LayoutContainer = styled('div')({
 	flex: '1 1 auto',
 	flexDirection: 'column',
 	width: '100%',
-	padding: "48px 24px",
+	padding: '48px 24px'
 });
 
 export const Layout = (props) => {
 	const { children } = props;
 	const pathname = usePathname();
-	const [openNav, setOpenNav] = useState(true);
-
-	useEffect(
-		() => {
-			if (openNav) {
-				setOpenNav(false);
-			}
-		},
-		[pathname, openNav]
-	);
-
 	return (
 	  <>
-		  <TopNavBar onNavOpen={() => setOpenNav(true)} />
-		  <SideNavBar
-			onClose={() => setOpenNav(false)}
-			open={openNav}
-		  />
 		  <LayoutRoot>
-			  <LayoutContainer>
+			  <LayoutContainer sx={{
+				  background: 'radial-gradient(at center top, #F1D7F5, #FFFFFF,#FFFFFF,#FFFFFF)',
+			  }}>
+				  <InPageNav/>
 				  {children}
 			  </LayoutContainer>
 		  </LayoutRoot>

@@ -19,6 +19,14 @@ import {mentors, solutions, teamMembers} from '../other/data';
 import PersonCard from '../components/index/personCard/PersonCard';
 import {TeamLogo} from "../components/index/teamLogo/TeamLogo";
 
+const StyledMentorList = styled(Stack)(({theme}) => ({
+	border: '1px solid ' + theme.palette.divider,
+	padding: '32px',
+	width: 'min-content',
+	borderRadius: theme.shape.borderRadius,
+	height: 'min-content'
+}))
+
 const Page = () => {
 	const TeammateList = () => (
 		<Stack direction={'row'} alignItems={'center'} spacing={3}>
@@ -29,17 +37,16 @@ const Page = () => {
 	)
 
 	const MentorList = () => (
-		<Stack spacing={4} alignItems={'center'}>
-			<Typography variant={'h5'}>
-				Наши менторы
-			</Typography>
-			<Divider width={'100%'}/>
+		<StyledMentorList alignItems={'center'}>
 			<Stack direction={'row'} spacing={3} width={'min-content'}>
+				<Typography variant={'h6'}>
+					Наши менторы
+				</Typography>
 				{mentors.map((mentor, index) => (
 					<PersonCard key={index} {...mentor} />
 				))}
 			</Stack>
-		</Stack>
+		</StyledMentorList>
 	)
 
 
@@ -47,37 +54,37 @@ const Page = () => {
 		<Container component={'main'} sx={{paddingBottom: '32px'}}>
 			<Stack spacing={2}>
 				<Stack spacing={3}>
-					<Grid container spacing={6}>
-						<Grid item xs={8}>
-							<Stack spacing={6}>
-								<TeamLogo/>
-								<TeammateList/>
-								<MentorList/>
-							</Stack>
-
+					<Stack spacing={2}>
+						<Typography variant={'h5'}>
+							Команда Label AI
+						</Typography>
+						<Grid container gap={8}>
+							<Grid item xs>
+								<Typography variant="body1"
+											paragraph
+											xs
+											sx={{
+												paddingTop: '8px',
+												opacity: '0.5'
+											}}>
+									— профессиональный коллектив студентов, специализирующихся на
+									разработке и исследованиях в области обработки естественного языка
+									(NLP). Мы занимаемся созданием и внедрением передовых технологий,
+									направленных на улучшение взаимодействия человека с компьютером
+									через естественный язык.Наши опытные наставники, помогают нам
+									достигать высоких результатов.
+								</Typography>
+							</Grid>
+							<Grid item xs>
+								<Stack spacing={2}>
+									<TeammateList/>
+									<MentorList/>
+								</Stack>
+							</Grid>
 						</Grid>
-						<Grid item xs>
-							<Typography variant={'h5'}>
-								Команда Label AI
-							</Typography>
-							<Typography variant="body1"
-										paragraph
-										xs
-										sx={{
-											paddingTop: '8px',
-											opacity: '0.5'
-										}}>
-								— профессиональный коллектив студентов, специализирующихся на
-								разработке и исследованиях в области обработки естественного языка
-								(NLP). Мы занимаемся созданием и внедрением передовых технологий,
-								направленных на улучшение взаимодействия человека с компьютером
-								через естественный язык.Наши опытные наставники, помогают нам
-								достигать высоких результатов.
-							</Typography>
-						</Grid>
-					</Grid>
 
 
+					</Stack>
 				</Stack>
 			</Stack>
 		</Container>

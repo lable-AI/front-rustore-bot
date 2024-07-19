@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, ButtonBase, Typography} from "@mui/material";
 import {alpha} from "@mui/material/styles";
-import {ourColor} from "../../../theme/colors";
+import {ourColor} from "../../../../theme/colors";
 import {styled} from "@mui/system";
 import NextLink from "next/link";
 

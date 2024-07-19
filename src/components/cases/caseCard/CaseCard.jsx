@@ -1,4 +1,4 @@
-import {Avatar, AvatarGroup, Box, Grid, Stack, Typography} from "@mui/material";
+import {Avatar, AvatarGroup, Box, Divider, Grid, Stack, Typography} from "@mui/material";
 import {borderRadius, styled} from "@mui/system";
 import {alpha} from "@mui/material/styles";
 import React from "react";
@@ -25,9 +25,8 @@ const StyledTypography = styled(Typography)(({theme, color}) => ({
 const StyledTag = styled(Box)(({theme, color}) => ({
 	borderRadius: theme.shape.borderRadius,
 	backgroundColor: alpha('#fff', 0.3),
-	border: '1px solid ' + alpha(color, 0.4),
-	padding: '4px 6px',
-	width: 'auto',
+	border: '1px solid ' + alpha(color, 0.15),
+	padding: '4px 12px',
 	userSelect: 'none',
 }))
 
@@ -52,7 +51,7 @@ export function CaseCard({background, color, title, note, date, image, tags, tea
 				<Grid container spacing={0.5}>
 					{
 						tags.map(tag => (
-							<Grid key={tag} item xs>
+							<Grid key={tag} item xs={'auto'}>
 								<StyledTag color={color}>
 									<StyledTypography variant={'subtitle2'}>
 										#{tag}
@@ -75,6 +74,7 @@ export function CaseCard({background, color, title, note, date, image, tags, tea
 				{image && <StyledImage color={color}
 							  src={image}
 							  alt=""/>}
+				<Divider/>
 				<Stack direction={'row'} spacing={0.5}>
 					{team.map(id => {
 

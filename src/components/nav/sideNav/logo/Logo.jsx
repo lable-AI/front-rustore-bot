@@ -1,5 +1,5 @@
 import {Box, Link, Stack, Typography} from "@mui/material";
-import {ourColor} from "../../../theme/colors";
+import {ourColor} from "../../../../theme/colors";
 import {grey} from "@mui/material/colors";
 
 export function Logo(){
