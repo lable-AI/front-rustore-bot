@@ -4,6 +4,7 @@ import {alpha} from "@mui/material/styles";
 import React from "react";
 import {teamMembers} from "../../../other/data";
 import {darkenHexColor} from "../../../utils/darkenColor";
+import {Tag} from "../../tag/Tag";
 
 const StyledCaseCard = styled(Box)(({theme, background, color}) => ({
 	borderRadius: theme.shape.borderRadius,
@@ -17,18 +18,6 @@ const StyledCaseCard = styled(Box)(({theme, background, color}) => ({
 	color
 }))
 
-const StyledTypography = styled(Typography)(({theme, color}) => ({
-	color
-}))
-
-
-const StyledTag = styled(Box)(({theme, color}) => ({
-	borderRadius: theme.shape.borderRadius,
-	backgroundColor: alpha('#fff', 0.3),
-	border: '1px solid ' + alpha(color, 0.15),
-	padding: '4px 12px',
-	userSelect: 'none',
-}))
 
 const StyledImage = styled('img')(({theme, color}) => ({
 	borderRadius: theme.shape.borderRadius,
@@ -44,6 +33,10 @@ const StyledYear = styled(Box)(({theme, color}) => ({
 }))
 
 
+const StyledTypography = styled(Typography)(({theme, color}) => ({
+	color
+}))
+
 export function CaseCard({background, color, title, note, date, image, tags, team}) {
 	return (
 		<StyledCaseCard background={background} color={color}>
@@ -52,11 +45,7 @@ export function CaseCard({background, color, title, note, date, image, tags, tea
 					{
 						tags.map(tag => (
 							<Grid key={tag} item xs={'auto'}>
-								<StyledTag color={color}>
-									<StyledTypography variant={'subtitle2'}>
-										#{tag}
-									</StyledTypography>
-								</StyledTag>
+								<Tag color={color}>{tag}</Tag>
 							</Grid>
 						))
 					}

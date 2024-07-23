@@ -1,0 +1,4 @@
+/* Скрытие полос прокрутки для WebKit */
+body::-webkit-scrollbar {
+	display: none; /* Скрыть полосу прокрутки */
+}

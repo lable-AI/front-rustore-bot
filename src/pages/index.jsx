@@ -18,7 +18,7 @@ import {styled} from '@mui/system';
 import {mentors, solutions, teamMembers} from '../other/data';
 import PersonCard from '../components/index/personCard/PersonCard';
 import {TeamLogo} from "../components/index/teamLogo/TeamLogo";
-import {PersonPopUp} from "../components/index/personPopUp/PersonPopUp";
+import {PersonModal} from "../components/index/personModal/PersonModal";
 
 const StyledMentorList = styled(Stack)(({theme}) => ({
 	border: '1px solid ' + theme.palette.divider,
@@ -105,7 +105,7 @@ const Page = () => {
 					</Stack>
 				</Stack>
 			</Container>
-			<PersonPopUp isOpen={isPersonCardOpen} currentPerson={currentPerson} handleClose={() => setIsPersonCardOpen(false)} />
+			<PersonModal isOpen={isPersonCardOpen} currentPerson={currentPerson} handleClose={() => setIsPersonCardOpen(false)} />
 		</>
 
 	);

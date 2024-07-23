@@ -4,6 +4,7 @@ export const teamMembers = [
 		name: 'Гербылев Олег',
 		role: 'Team Leader',
 		description: 'Олег отвечает за техническую часть, ставит задачи и занимается разработкой.',
+		skills: ["java", "spring", "python"],
 		image: '/assets/team/oleg.jpg',
 		tg: 'https://t.me/olegGerbylev'
 	}, {
@@ -11,13 +12,15 @@ export const teamMembers = [
 		name: 'Артур Насов',
 		role: 'ML Developer',
 		description: 'Артур занимается разработкой и настройкой разных ML-моделей.',
+		skills: ["java", "spring", "python"],
 		image: '/assets/team/artu.jpeg',
-		tg: 'https://t.me/Artur_Kildiyarov'
+		tg: 'https://t.me/Artur_Kildiyarov',
 	}, {
 		id: 2,
 		name: 'Александр Шамшурин',
 		role: 'Designer',
 		description: 'Александр отвечает за дизайн продукта и представление его публике.',
+		skills: ["java", "spring", "python"],
 		image: '/assets/team/alek2.jpeg',
 		tg: 'https://t.me/Topleess'
 	}, {
@@ -25,6 +28,7 @@ export const teamMembers = [
 		name: 'Никита Трошин',
 		role: 'Frontend Developer',
 		description: 'Никита отвечает за разработку визуальной части продукта.',
+		skills: ["java", "spring", "python"],
 		image: '/assets/team/nik.jpeg',
 		tg: 'https://t.me/Nihuaway00'
 	}
