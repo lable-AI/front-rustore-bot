@@ -34,8 +34,15 @@ const Page = () => {
 
 	function openPersonPopUp(person){
 		setCurrentPerson(person);
-		setIsPersonCardOpen(true);
 	}
+
+	useEffect(() => {
+		setIsPersonCardOpen(!!currentPerson);
+	}, [currentPerson]);
+
+	useEffect(() => {
+		if(!isPersonCardOpen) setCurrentPerson(null);
+	}, [isPersonCardOpen]);
 
 	const TeammateList = () => (
 		<Stack direction={'row'} alignItems={'center'} spacing={3}>

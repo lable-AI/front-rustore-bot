@@ -27,7 +27,7 @@ const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
 
 function PersonCard({image, name, description, role, tg, inst, onClick}) {
 	return (
-	  <StyledCard onClick={onClick}>
+	  <StyledCard onClick={onClick} sx={{pointerEvents: !onClick && 'none'}}>
 		  <StyledCardMedia
 			image={image}
 			title={name}
