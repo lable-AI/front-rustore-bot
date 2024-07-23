@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
 	Container,
 	Typography,
@@ -18,6 +18,7 @@ import {styled} from '@mui/system';
 import {mentors, solutions, teamMembers} from '../other/data';
 import PersonCard from '../components/index/personCard/PersonCard';
 import {TeamLogo} from "../components/index/teamLogo/TeamLogo";
+import {PersonPopUp} from "../components/index/personPopUp/PersonPopUp";
 
 const StyledMentorList = styled(Stack)(({theme}) => ({
 	border: '1px solid ' + theme.palette.divider,
@@ -28,10 +29,18 @@ const StyledMentorList = styled(Stack)(({theme}) => ({
 }))
 
 const Page = () => {
+	const [isPersonCardOpen, setIsPersonCardOpen] = useState(false);
+	const [currentPerson, setCurrentPerson] = useState(null);
+
+	function openPersonPopUp(person){
+		setCurrentPerson(person);
+		setIsPersonCardOpen(true);
+	}
+
 	const TeammateList = () => (
 		<Stack direction={'row'} alignItems={'center'} spacing={3}>
 			{teamMembers.map((member, index) => (
-				<PersonCard key={index} {...member} />
+				<PersonCard onClick={() => openPersonPopUp(member)} key={index} {...member} />
 			))}
 		</Stack>
 	)
@@ -51,43 +60,47 @@ const Page = () => {
 
 
 	return (
-		<Container component={'main'} sx={{paddingBottom: '32px'}}>
-			<Stack spacing={2}>
-				<Stack spacing={3}>
-					<Stack spacing={2}>
-						<Typography variant={'h5'}>
-							Команда Label AI
-						</Typography>
-						<Grid container gap={8}>
-							<Grid item xs>
-								<Typography variant="body1"
-											paragraph
-											xs
-											sx={{
-												paddingTop: '8px',
-												opacity: '0.5'
-											}}>
-									— профессиональный коллектив студентов, специализирующихся на
-									разработке и исследованиях в области обработки естественного языка
-									(NLP). Мы занимаемся созданием и внедрением передовых технологий,
-									направленных на улучшение взаимодействия человека с компьютером
-									через естественный язык.Наши опытные наставники, помогают нам
-									достигать высоких результатов.
-								</Typography>
+		<>
+			<Container component={'main'} sx={{paddingBottom: '32px'}}>
+				<Stack spacing={2}>
+					<Stack spacing={3}>
+						<Stack spacing={2}>
+							<Typography variant={'h5'}>
+								Команда Label AI
+							</Typography>
+							<Grid container gap={8}>
+								<Grid item xs>
+									<Typography variant="body1"
+												paragraph
+												xs
+												sx={{
+													paddingTop: '8px',
+													opacity: '0.5'
+												}}>
+										— профессиональный коллектив студентов, специализирующихся на
+										разработке и исследованиях в области обработки естественного языка
+										(NLP). Мы занимаемся созданием и внедрением передовых технологий,
+										направленных на улучшение взаимодействия человека с компьютером
+										через естественный язык.Наши опытные наставники, помогают нам
+										достигать высоких результатов.
+									</Typography>
+								</Grid>
+								<Grid item xs>
+									<Stack spacing={2}>
+										<TeammateList/>
+										<MentorList/>
+									</Stack>
+								</Grid>
 							</Grid>
-							<Grid item xs>
-								<Stack spacing={2}>
-									<TeammateList/>
-									<MentorList/>
-								</Stack>
-							</Grid>
-						</Grid>
 
 
+						</Stack>
 					</Stack>
 				</Stack>
-			</Stack>
-		</Container>
+			</Container>
+			<PersonPopUp isOpen={isPersonCardOpen} currentPerson={currentPerson} handleClose={() => setIsPersonCardOpen(false)} />
+		</>
+
 	);
 };
 

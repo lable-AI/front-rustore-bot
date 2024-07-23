@@ -20,15 +20,15 @@ export const items = [
 			</SvgIcon>
 		)
 	},
-	{
-		title: 'Статьи',
-		path: '/articles',
-		icon: (
-			<SvgIcon fontSize="small">
-				<Newspaper />
-			</SvgIcon>
-		)
-	},
+	// {
+	// 	title: 'Статьи',
+	// 	path: '/articles',
+	// 	icon: (
+	// 		<SvgIcon fontSize="small">
+	// 			<Newspaper />
+	// 		</SvgIcon>
+	// 	)
+	// },
 	{
 		title: 'Кейсы',
 		path: '/cases',
