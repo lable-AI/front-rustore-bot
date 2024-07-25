@@ -26,9 +26,9 @@ export const teamMembers = [
 	}, {
 		id: 3,
 		name: 'Никита Трошин',
-		role: 'Frontend Developer',
+		role: 'Fullstack Developer',
 		description: 'Никита отвечает за разработку визуальной части продукта.',
-		skills: ["java", "spring", "python"],
+		skills: ["js","react", "java", "spring"],
 		image: '/assets/team/nik.jpeg',
 		tg: 'https://t.me/Nihuaway00'
 	}
@@ -62,10 +62,9 @@ export const solutions = [
 
 export const cases = [
 	{
-		title: 'хакатн',
+		title: 'Цифровой прорыв. fjkrejfer ghierhge',
 		note: 'gbplt yj dtctkj',
 		description: 'Инструмент для анализа тональности текста и извлечения ключевых слов ',
-		image: 'https://i.pinimg.com/564x/f4/9d/f3/f49df3a76089507ec31371d6a87c7000.jpg',
 		date: '2024',
 		tags: [
 		  'spring',

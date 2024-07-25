@@ -51,11 +51,14 @@ export function CaseCard({background, color, title, note, date, image, tags, tea
 					}
 				</Grid>
 				<Stack spacing={0.5}>
-					<Stack alignItems={'center'} direction={'row'} spacing={1}>
+					<Stack alignItems={'flex-start'} direction={'row'} spacing={1}>
 						<StyledTypography variant={'h5'}>{title}</StyledTypography>
-						<StyledYear color={color}>
-							<StyledTypography variant={'caption'}>{date}</StyledTypography>
-						</StyledYear>
+						<Box sx={{paddingTop: '4px'}}>
+							<StyledYear color={color}>
+								<StyledTypography variant={'caption'}>{date}</StyledTypography>
+							</StyledYear>
+						</Box>
+
 					</Stack>
 					<StyledTypography variant={'subtitle2'}>{note}</StyledTypography>
 				</Stack>
